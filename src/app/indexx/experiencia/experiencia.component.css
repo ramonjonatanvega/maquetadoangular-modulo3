@@ -1,0 +1,10 @@
+ /*experiencia - colores letras*/
+ div#experiencia{
+    text-shadow:0rem 0.125rem 1rem;    
+}
+
+ /*efecto hover logos esperiencia*/
+ img#logosexp:hover{
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1.40);  
+}

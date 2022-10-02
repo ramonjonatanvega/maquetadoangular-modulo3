@@ -1,0 +1,97 @@
+{
+    "nombre": "Jonatan",
+    "apellido": "Vega",
+    "acerca": "Desarrollo web y aplicaciones digitales.",
+
+    "educaciones": [
+        {
+            "id": 0,
+            "inicio": "Marzo de 2022",
+            "fin": "Mayo de 2022",
+            "nombreInstitucion": "Instituto Educacion Secundaria Felipe Santiago Estenos",
+            "logoInstitucion": "assets/IMG/estenos.png",
+            "titulo":"bachiller"
+           
+        },
+        {
+            "id": 1,
+            "inicio": "Junio de 2022",
+            "fin": "Enero de 2022",
+            "nombreInstitucion": "Instituto World Data System",
+            "logoInstitucion": "assets/IMG/images.png",
+            "titulo": "Tecnico en Computacion y Sistemas"
+            
+        },
+        {
+            "id": 2,
+            "inicio": "Junio de 2022",
+            "fin": "Enero de 2022",
+            "nombreInstitucion": "Argentina Programa",
+            "logoInstitucion": "assets/IMG/channels4_profile.png",
+            "titulo": "Desarrolo Web Full Stack."
+            
+        }
+    ],
+
+    "experiencias": [
+        {
+            "id": 0,
+            "logoEmpresa":"assets/IMG/descarga.png",
+            "nombreEmpresa":"ElDon",
+            "descripcionPuesto":"Manejo de Robot de Corte y Tizador Computarizado"
+        },
+        {
+            "id": 1,
+            "logoEmpresa":"assets/IMG/lowww.png",
+            "nombreEmpresa":"Low Cost - Soluciones informaticas",
+            "descripcionPuesto":"Tecnico en Reparación Y Systemas"
+        },
+        {
+            "id": 2,
+            "logoEmpresa":"assets/IMG/servicio-tecnico.png",
+            "nombreEmpresa":"Electronica Low-Cost",
+            "descripcionPuesto":"Reparacion de electronica en General:"
+        }
+    ],
+
+    "habilidades": [
+        {
+            "id": 0,
+            "curso": "HTML",
+            "porcentaje": "85",
+            "color": "bg-success"
+        },
+        {
+            "id": 1,
+            "curso": "CSS",
+            "porcentaje": "70",   
+            "color": "bg-primary"
+        },
+        {
+            "id": 2,
+            "curso": "JAVASCRIPT",
+            "porcentaje": "55",
+            "color": "bg-danger"   
+        },
+        {
+            "id": 3,
+            "curso": "TYPESCRIPT",
+            "porcentaje": "65",
+            "color": "bg-danger"   
+        },
+        {
+            "id": 4,
+            "curso": "ANGULAR",
+            "porcentaje": "55",
+            "color": "bg-warning"   
+        },
+        {
+            "id": 5,
+            "curso": "BOOTSTRAP",
+            "porcentaje": "80",
+            "color": "bg-info"   
+        }
+    ],
+
+    "frase":"lorem ipsum"
+}

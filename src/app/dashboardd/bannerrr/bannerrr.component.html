@@ -1,0 +1,174 @@
+<section id="dashboard" class="dashboard">
+    <div class="container-fluid text-center pt-5">
+      <div class="row">
+        <!--sidebar-->              
+                <div class="col-2">
+                  <div class="d-flex align-items-start">
+                    <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                      <a href="index.html" target="_blank"><button class="nav-link active" id="v-pills-home-tab"  type="button">Home</button></a>
+                      <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Perfil</button>
+                      <button class="nav-link" id="v-pills-exp-tab" data-bs-toggle="pill" data-bs-target="#v-pills-exp" type="button" role="tab" aria-controls="v-pills-exp" aria-selected="false">Experiencia Laboral</button>
+                      <button class="nav-link" id="v-pills-educacion-tab" data-bs-toggle="pill" data-bs-target="#v-pills-educacion" type="button" role="tab" aria-controls="v-pills-educacion" aria-selected="false">Educacion</button>
+                      <button class="nav-link" id="v-pills-habilidades-tab" data-bs-toggle="pill" data-bs-target="#v-pills-habilidades" type="button" role="tab" aria-controls="v-pills-habilidades" aria-selected="false">Hard & soft Skills</button>
+                      <button class="nav-link" id="v-pills-proyectos-tab" data-bs-toggle="pill" data-bs-target="#v-pills-proyectos" type="button" role="tab" aria-controls="v-pills-proyectos" aria-selected="false">Proyectos</button>
+                    </div>
+                    <!--
+                    <div class="tab-content" id="v-pills-tabContent">              
+                      <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabindex="0">...</div>
+                      <div class="tab-pane fade" id="v-pills-exp" role="tabpanel" aria-labelledby="v-pills-exp-tab" tabindex="0">...</div>
+                      <div class="tab-pane fade" id="v-pills-educacion" role="tabpanel" aria-labelledby="v-pills-educacion-tab" tabindex="0">...</div>
+                      <div class="tab-pane fade" id="v-pills-habilidades" role="tabpanel" aria-labelledby="v-pills-habilidades-tab" tabindex="0">...</div>
+                      <div class="tab-pane fade" id="v-pills-proyectos" role="tabpanel" aria-labelledby="v-pills-proyectos-tab" tabindex="0">...</div>
+                    </div>-->
+                  </div>
+                </div>
+                <!--body-->                  
+                <div class="col-9 tab-content" id="v-pills-tabContent">
+
+                  <!--dashboard perfil-->
+                  <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabindex="0">
+                    <h4 class="text-center"><b>Datos Personales</b></h4>          
+                      <div class="mb-3">
+                        <div class="row">
+                          <label for="formFileSm" class="form-label">Foto Perfil</label>
+                          <input class="form-control form-control-sm" id="formFileSm" type="file">                 
+                        </div>
+                        <button type="button" class="btn btn-primary">Guardar</button> 
+                      </div> 
+                        <div class="mb-3">
+                          <div class="row">
+                           <label for="formFileSm" class="form-label">Nombre y Apellido</label>
+                           <input class="form-control form-control-sm" id="formFileSm" type="text">                      
+                          </div>
+                          <button type="button" class="btn btn-primary">Guardar</button> 
+                        </div>
+                      <div class="mb-3">
+                        <div class="row">
+                          <label for="formFileSm" class="form-label">Acerca de mi</label>
+                          <input class="form-control form-control-sm" id="formFileSm" type="text">               
+                        </div>
+                        <button type="button" class="btn btn-primary">Guardar</button> 
+                      </div>
+                  </div>
+                  
+                  
+                   <!--dashboard experiencia-->
+                      <div class="tab-pane fade" id="v-pills-exp" role="tabpanel" aria-labelledby="v-pills-exp-tab" tabindex="0">
+                        <h4 class="text-center"><b>Experiencia Laboral</b></h4>          
+                          <div class="mb-3">
+                            <div class="row">
+                              <label for="formFileSm" class="form-label">Logo Empresa</label>
+                              <input class="form-control form-control-sm" id="formFileSm" type="file">                                   
+                            </div>
+                            <button type="button" class="btn btn-primary">Guardar</button>
+                          </div>
+                            <div class="mb-3">
+                              <div class="row">
+                                <label for="formFileSm" class="form-label">Nombre Empresa</label>
+                                <input class="form-control form-control-sm" id="formFileSm" type="text">                                     
+                              </div> 
+                              <button type="button" class="btn btn-primary">Guardar</button>
+                            </div>      
+                            <div class="mb-3">
+                              <div class="row">
+                                <label for="formFileSm" class="form-label">Descripcion del Puesto</label>
+                                <input class="form-control form-control-sm" id="formFileSm" type="text">                                   
+                              </div> 
+                              <button type="button" class="btn btn-primary">Guardar</button>
+                            </div>  
+                      </div>
+
+
+                      <!--dashborad educacion--> 
+                      <div class="tab-pane fade" id="v-pills-educacion" role="tabpanel" aria-labelledby="v-pills-educacion-tab" tabindex="0">
+                        <h4 class="text-center"><b>Educacion</b></h4>          
+                          <div class="mb-3">
+                            <div class="row">
+                              <label for="formFileSm" class="form-label">Logo Institución</label>
+                              <input class="form-control form-control-sm" id="formFileSm" type="file">                                   
+                            </div>
+                            <button type="button" class="btn btn-primary">Guardar</button>
+                          </div>
+                            <div class="mb-3">
+                              <div class="row">
+                                <label for="formFileSm" class="form-label">Nombre Institución</label>
+                                <input class="form-control form-control-sm" id="formFileSm" type="text">                                     
+                              </div> 
+                              <button type="button" class="btn btn-primary">Guardar</button>
+                            </div>      
+                            <div class="mb-3">
+                              <div class="row">
+                                <label for="formFileSm" class="form-label">Periodo</label>
+                                <input class="form-control form-control-sm" id="formFileSm" type="text">                                   
+                              </div> 
+                              <button type="button" class="btn btn-primary">Guardar</button>
+                            </div> 
+                      </div> 
+                      
+
+                      <!--dashboard habilidades-->
+                        <div class="tab-pane fade" id="v-pills-habilidades" role="tabpanel" aria-labelledby="v-pills-habilidades-tab" tabindex="0">
+                          <h4 class="text-center"><b>Habilidades</b></h4>          
+                          <div class="mb-3">
+                            <div class="row">
+                              <label for="formFileSm" class="form-label">Logo Habilidad</label>
+                              <input class="form-control form-control-sm" id="formFileSm" type="file">                                   
+                            </div>
+                            <button type="button" class="btn btn-primary">Guardar</button>
+                          </div>
+                            <div class="mb-3">
+                              <div class="row">
+                                <label for="formFileSm" class="form-label">Nombre y Porcentaje de habilidad</label>
+                                <input class="form-control form-control-sm" id="formFileSm" type="text">                                   
+                              </div> 
+                              <button type="button" class="btn btn-primary">Guardar</button>
+                            </div> 
+                        </div>
+                        
+                        
+                        <!--dashboard proyectos-->
+                        <div class="tab-pane fade" id="v-pills-proyectos" role="tabpanel" aria-labelledby="v-pills-proyectos-tab" tabindex="0">
+                          <h4 class="text-center"><b>Proyecto</b></h4>          
+                          <div class="mb-3">
+                            <div class="row">
+                              <label for="formFileSm" class="form-label">Logo Proyecto</label>
+                              <input class="form-control form-control-sm" id="formFileSm" type="file">                                   
+                            </div>
+                            <button type="button" class="btn btn-primary">Guardar</button>
+                          </div>
+                            <div class="mb-3">
+                              <div class="row">
+                                <label for="formFileSm" class="form-label">Descripción Nuevo Proyecto</label>
+                                <input class="form-control form-control-sm" id="formFileSm" type="text">                                   
+                              </div> 
+                              <button type="button" class="btn btn-primary">Guardar</button>
+                            </div> 
+                        </div> 
+                </div>
+                                       
+                    <div class="col-1">
+                    
+                    </div>
+                </div>
+                  
+                  
+                    
+                  
+                   <!--Body>
+                <div class="col-9 tab-content" id="v-pills-tabContent">                                            
+                </div>    
+                  <div class="col-1"> 
+                    <div class="row mt-md-5">
+                    <br>
+                    <button type="button" class="btn btn-primary">Guardar</button>
+                  </div>
+                  <div class="row"></div>
+                  <div class="row mt-md-5">
+                    <br>
+                    <button type="button" class="btn btn-primary">Guardar</button>         
+                  </div>
+                  <div class="row"></div>
+                </div>-->    
+      </div>
+                                              
+</section>
