@@ -1,21 +1,21 @@
  <!--fot/perfil/acerca de mi-->      
  <section id="sobre-mi" class="perfil">
     <div class="container text-center">
-      <div class="row">                 
+      <div class="row" *ngFor="let persona of personas">                 
         <!--foto de perfil-->
         <div class="col-sm-4" id="fotoperfil">
           <div class="fotoperfil" >
             <img src="assets/IMG/jonaaaaafotoperfil.png"  class="rounded-circle w-75"   alt="..." title="..." >
-            <h2 class="fn-normal text-center"><b>{{nombre}} {{apellido}} </b></h2>
-            <h5 class="text-center" ><i>"Full Stack Developer Jr."</i></h5>
-            <h4>Buenos Aires (Argentina)</h4>
+            <h4 class="fn-normal text-center"><b>{{persona.nombre}} {{persona.apellido}} </b></h4>
+            <h5 class="text-center" ><i>{{persona.titulo}}</i></h5>
+            <h4>{{persona.ubicacion}}</h4>
           </div>
         </div>                 
         <div class="col-sm-8 " id="fullstack">       
-          <p class="text-center"><i> {{acerca}}</i></p>                   
+          <p class="text-center"><i> {{persona.acerca_de}}</i></p>                   
         </div>   
       </div>
     </div>
-  
+  <br><br>
 
 </section> 

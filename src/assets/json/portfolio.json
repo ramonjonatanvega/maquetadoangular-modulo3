@@ -6,29 +6,32 @@
     "educaciones": [
         {
             "id": 0,
-            "inicio": "Marzo de 2022",
-            "fin": "Mayo de 2022",
             "nombreInstitucion": "Instituto Educacion Secundaria Felipe Santiago Estenos",
             "logoInstitucion": "assets/IMG/estenos.png",
-            "titulo":"bachiller"
+            "titulo":"bachiller",
+            "fechaInicio": "03-03-1999",
+            "fechaFin": "12-12-2003"
+            
            
         },
         {
             "id": 1,
-            "inicio": "Junio de 2022",
-            "fin": "Enero de 2022",
             "nombreInstitucion": "Instituto World Data System",
             "logoInstitucion": "assets/IMG/images.png",
-            "titulo": "Tecnico en Computacion y Sistemas"
+            "titulo": "Tecnico en Computacion y Sistemas",
+            "fechaInicio": "03-03-1999",
+            "fechaFin": "12-12-2003"
+            
             
         },
         {
             "id": 2,
-            "inicio": "Junio de 2022",
-            "fin": "Enero de 2022",
             "nombreInstitucion": "Argentina Programa",
             "logoInstitucion": "assets/IMG/channels4_profile.png",
-            "titulo": "Desarrolo Web Full Stack."
+            "titulo": "Desarrolo Web Full Stack.",
+            "fechaInicio": "03-03-1999",
+            "fechaFin": "12-12-2003"
+            
             
         }
     ],
@@ -36,21 +39,30 @@
     "experiencias": [
         {
             "id": 0,
-            "logoEmpresa":"assets/IMG/descarga.png",
             "nombreEmpresa":"ElDon",
-            "descripcionPuesto":"Manejo de Robot de Corte y Tizador Computarizado"
+            "logoEmpresa":"assets/IMG/descarga.png",           
+            "puesto":"Manejo de Robot de Corte y Tizador Computarizado",
+            "descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque unde omnis adipisci aliquam, eligendi earum fuga accusamus est modi explicabo reiciendis laboriosam, cum et ut eos aspernatur asperiores. A, aspernatur.",
+            "fechaInicio": "03-03-1999",
+            "fechaFin": "12-12-2003"
         },
         {
             "id": 1,
-            "logoEmpresa":"assets/IMG/lowww.png",
             "nombreEmpresa":"Low Cost - Soluciones informaticas",
-            "descripcionPuesto":"Tecnico en Reparación Y Systemas"
+            "logoEmpresa":"assets/IMG/lowww.png",       
+            "puesto":"Tecnico en Reparación Y Systemas",
+            "descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque unde omnis adipisci aliquam, eligendi earum fuga accusamus est modi explicabo reiciendis laboriosam, cum et ut eos aspernatur asperiores. A, aspernatur.",
+            "fechaInicio": "03-03-1999",
+            "fechaFin": "12-12-2003"
         },
         {
             "id": 2,
-            "logoEmpresa":"assets/IMG/servicio-tecnico.png",
             "nombreEmpresa":"Electronica Low-Cost",
-            "descripcionPuesto":"Reparacion de electronica en General:"
+            "logoEmpresa":"assets/IMG/servicio-tecnico.png",           
+            "puesto":"Reparacion de electronica en General",
+            "descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque unde omnis adipisci aliquam, eligendi earum fuga accusamus est modi explicabo reiciendis laboriosam, cum et ut eos aspernatur asperiores. A, aspernatur.",
+            "fechaInicio": "03-03-1999",
+            "fechaFin": "12-12-2003"
         }
     ],
 
@@ -69,7 +81,7 @@
         },
         {
             "id": 2,
-            "curso": "JAVASCRIPT",
+            "nombreHabilidad": "JAVASCRIPT",
             "porcentaje": "55",
             "color": "bg-danger"   
         },
@@ -93,5 +105,12 @@
         }
     ],
 
-    "frase":"lorem ipsum"
+    "proyectos": [
+        {
+            "id": 0,
+            "nombreProyecto":"Web Portofolio personal.",
+            "logoProyecto":"assets/IMG/Captura de pantalla (1).png",    
+            "descripcionProyecto":"Pagina portofolio personal realizada con HTML5, CSS, BOOTSTRAP, JAVA, ANGULAR Y SPRINGBOOT"
+        }
+    ]
 }

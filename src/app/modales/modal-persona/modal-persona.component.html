@@ -1,0 +1,112 @@
+<!--dashboard perfil-->
+<!--se agrega el form y se crea ngsubmit=onsubmit y formgroup=persoform y despues persoform se declara en el modal-persona.ts-->
+<form (ngSubmit)="onEnviar($event)" [formGroup]="persoForm">
+    <div class="row">
+        <div class="col-9-sm">
+            <h4 class="text-center"><b>Datos Personales</b></h4>
+
+            <div class="mb-3">
+                <label for="formFileSm" class="form-label">Nombre</label>
+                <!--formControlName hace pedir nombre requerido y placeholder pide ingrese puesto-->
+                <input class="form-control form-control-sm" id="formFileSm" type="text" required
+                    formControlName="nombre" placeholder="Ingrese Nombre......" [(ngModel)]="nombre">
+                <!--formulario reactivo-->
+                <div *ngIf="persoForm.get('nombre')?.touched && persoForm.get('nombre')?.errors?.['required'] "
+                    class="alert alert-danger"> Nombre Requerido.</div>
+                <div *ngIf="persoForm.get('nombre')?.touched && persoForm.get('nombre')?.errors?.['minlength'] "
+                    class="alert alert-danger"> minimo 8 characters.</div>
+            </div>
+
+            <br>
+
+            <div class="mb-3">
+                <label for="formFileSm" class="form-label">Apellido</label>
+                <!--formControlName hace pedir apellido requerido y placeholder pide ingrese puesto-->
+                <input class="form-control form-control-sm" id="formFileSm" type="text" required
+                    formControlName="apellido" placeholder="Ingrese Apellido......" [(ngModel)]="apellido">
+                <!--formulario reactivo-->
+                <div *ngIf="persoForm.get('apellido')?.touched && persoForm.get('apellido')?.errors?.['required'] "
+                    class="alert alert-danger"> Apellido Requerido.</div>
+                <div *ngIf="persoForm.get('apellido')?.touched && persoForm.get('apellido')?.errors?.['minlength'] "
+                    class="alert alert-danger"> minimo 10 characters.</div>
+            </div>
+
+            <br>
+
+            <div class="mb-3">
+                <label for="formFileSm" class="form-label">Banner</label>
+                <!--formControlName hace pedir imagen requerida-->
+                <input class="form-control form-control-sm" id="formFileSm" type="file" formControlName="banner"
+                    [(ngModel)]="banner">
+                <!--formulario reactivo-->
+                <div *ngIf="persoForm.get('banner')?.touched && persoForm.get('banner')?.errors?.['required'] "
+                    class="alert alert-danger"> Imagen requerida.</div>
+            </div>
+
+            <br>
+
+            <div class="mb-3">
+                <label for="formFileSm" class="form-label">Foto Perfil</label>
+                <!--formControlName hace pedir imagen requerida-->
+                <input class="form-control form-control-sm" id="formFileSm" type="file" formControlName="foto_perfil"
+                    [(ngModel)]="foto_perfil">
+                <!--formulario reactivo-->
+                <div *ngIf="persoForm.get('foto_perfil')?.touched && persoForm.get('foto_perfil')?.errors?.['required'] "
+                    class="alert alert-danger"> Imagen requerida.</div>
+            </div>
+
+            <br>
+
+            <div class="mb-3">
+                <label for="formFileSm" class="form-label">Titulo</label>
+                <!--formControlName hace pedir titulo requerido y placeholder pide ingrese puesto-->
+                <input class="form-control form-control-sm" id="formFileSm" type="text" required
+                    formControlName="titulo" placeholder="Ingrese Titulo......" [(ngModel)]="titulo">
+                <!--formulario reactivo-->
+                <div *ngIf="persoForm.get('titulo')?.touched && persoForm.get('titulo')?.errors?.['required'] "
+                    class="alert alert-danger"> Titulo Requerido.</div>
+                <div *ngIf="persoForm.get('titulo')?.touched && persoForm.get('titulo')?.errors?.['minlength'] "
+                    class="alert alert-danger"> minimo 15 characters.</div>
+            </div>
+
+            <br>
+
+            <div class="mb-3">
+                <label for="formFileSm" class="form-label">Ubicacion</label>
+                <!--formControlName hace pedir apellido requerido y placeholder pide ingrese puesto-->
+                <input class="form-control form-control-sm" id="formFileSm" type="text" required
+                    formControlName="ubicacion" placeholder="Ingrese Ubicacion......" [(ngModel)]="ubicacion">
+                <!--formulario reactivo-->
+                <div *ngIf="persoForm.get('ubicacion')?.touched && persoForm.get('ubicacion')?.errors?.['required'] "
+                    class="alert alert-danger"> Ubicacion Requerida.</div>
+                <div *ngIf="persoForm.get('ubicacion')?.touched && persoForm.get('ubicacion')?.errors?.['minlength'] "
+                    class="alert alert-danger"> minimo 10 characters.</div>
+            </div>
+
+            <br>
+
+            <div class="mb-3">
+                <label for="formFileSm" class="form-label">Acerca de Mi</label>
+                <!--formControlName hace pedir Campo requerido y placeholder pide ingrese Descripcion-->
+                <textarea class="form-control" name="comment" id="comment" rows="4"
+                    placeholder="Ingrese Descripcion......" formControlName="acerca_de" required
+                    [(ngModel)]="acerca_de"></textarea>
+                <!--formulario reactivo-->
+                <div *ngIf="persoForm.get('acerca_de')?.touched && persoForm.get('acerca_de')?.errors?.['required'] "
+                    class="alert alert-danger"> Campo Requerido.</div>
+                <div *ngIf="persoForm.get('acerca_de')?.touched && persoForm.get('acerca_de')?.errors?.['minlength'] "
+                    class="alert alert-danger"> minimo 10 characters.</div>
+            </div>
+
+            <div class="mb-3 ">
+                <ul class="list-group list-group-horizontal ">
+                    <li class="list-group-item"><button type="button" (click)="limpiar()"
+                            class="btn btn-outline-primary mt-2" title="limpiar" data>Cancelar</button></li>
+                    <li class="list-group-item"> <button type="submit" class="btn btn-outline-primary mt-2"
+                            title="guardar">Guardar</button></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</form>

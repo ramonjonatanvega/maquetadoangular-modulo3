@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PortfolioService } from 'src/app/servicios/portfolio.service';
+import { EducacionService } from 'src/app/servicios/educacion.service';
+
 
 @Component({
   selector: 'app-educacion',
@@ -8,16 +9,16 @@ import { PortfolioService } from 'src/app/servicios/portfolio.service';
 })
 export class EducacionComponent implements OnInit {
   educaciones: any=[]
-
-  constructor(private portfolioService:PortfolioService) { }
+  
+  //se importa el servicio Educacion
+  constructor(private serviEducacion:EducacionService) { }
 
   ngOnInit(): void {
-    this.portfolioService.getDatos().subscribe(portfolio => {
-      //console.log(portfolio);  
-      //aqui se define informacion a mostrar
-      this.educaciones=portfolio.educaciones;
-     
-     });
+    this.cargarEducacion();
+  }
+
+  cargarEducacion():void{
+    this.serviEducacion.lista().subscribe(data => {this.educaciones=data});
   }
 
 }

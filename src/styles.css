@@ -66,3 +66,7 @@
         --bs-list-group-bg:transparent;
         --bs-list-group-border-width: 0;
     }
+   
+    hr{
+       border:0px; border-top: 5px double rgb(241, 234, 234);
+    }

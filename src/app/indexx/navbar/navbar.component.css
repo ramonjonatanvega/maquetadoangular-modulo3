@@ -14,44 +14,57 @@ i.fa-brands.fa-square-twitter.fa-2xl
     color: black;  
 }
 
+/*efecto hover logo argentina programa*/
+.navbar-brand:hover{
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1.05);
+}
 
 /*efectos hover redes*/
 i.fa-solid.fa-download.fa-2xl:hover{
     color: blue;
     transition: transform 0.3s ease-in-out;
-    transform: scale(1.40);   
+    transform: scale(1.40); 
+      
 }
+
 i.fa-brands.fa-square-facebook.fa-2xl:hover {
 color: blue;
 transition: transform 0.3s ease-in-out;
 transform: scale(1.40);
 }
+
 i.fa-brands.fa-instagram.fa-2xl:hover {
   color: rgb(194, 4, 109); 
   transition: transform 0.3s ease-in-out;
 transform: scale(1.40); 
 }
+
 i.fa-brands.fa-square-github.fa-2xl:hover {
     color: black;
     transition: transform 0.3s ease-in-out;
 transform: scale(1.40);
 }
+
 i.fa-brands.fa-square-twitter.fa-2xl:hover{
     color: rgb(0, 172, 238);
     transition: transform 0.3s ease-in-out;
 transform: scale(1.40);
 }
+
 i.fa-solid.fa-user-lock.fa-2xl:hover{
     color: rgba(37, 20, 187, 0.856);
     transition: transform 0.3s ease-in-out;
     transform: scale(1.40);
 }
+
 i.fa-solid.fa-user.fa-2xl:hover{
     color: rgba(37, 20, 187, 0.856);
     transition: transform 0.3s ease-in-out;
     transform: scale(1.40); 
     
 }
+
 /*redes sociales*/
 .list-group{
     --bs-list-group-bg:transparent;

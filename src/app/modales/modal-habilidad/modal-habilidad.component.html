@@ -1,0 +1,44 @@
+<!--dashboard habilidades-->
+<!--se agrega el form y se crea ngsubmit=onsubmit y formgroup=experienform y despues experienform se declara en el modal-habilidad.ts-->
+<form (ngSubmit)="onEnviar($event)" [formGroup]="habiliForm">
+    <div class="row">
+        <div class="col-9-sm">
+            <h4 class="text-center"><b>Habilidades</b></h4>
+
+            <div class="mb-3">
+
+                <label for="formFileSm" class="form-label">Nombre de Habilidad</label>
+                <!--formControlName hace pedir nombre requerido y placeholder pide ingrese habilidad-->
+                <input class="form-control form-control-sm" id="formFileSm" type="text" required
+                    formControlName="nombreHabilidad" placeholder="Ingrese Habilidad......" [(ngModel)]="nombreHabilidad" >
+                <!--formulario reactivo-->
+                <div *ngIf="habiliForm.get('nombreHabilidad')?.touched && habiliForm.get('nombreHabilidad')?.errors?.['required']  "
+                    class="alert alert-danger"> nombre requerido.</div>
+                <div *ngIf="habiliForm.get('nombreHabilidad')?.touched && habiliForm.get('nombreHabilidad')?.errors?.['minlength'] "
+                    class="alert alert-danger"> minimo 8 characters.</div>
+            </div>
+
+            <br>
+
+            <div class="mb-3">
+                <label for="formFileSm" class="form-label">Porcentaje de Habilidad</label>
+                <!--formControlName hace pedir Porcentaje requerido y placeholder pide ingrese Porcentaje-->
+                <input class="form-control form-control-sm" id="formFileSm" type="text" required
+                    formControlName="porcentaje" placeholder="Ingrese Porcentaje %......" [(ngModel)]="porcentaje" >
+                <!--formulario reactivo-->
+                <div *ngIf="habiliForm.get('porcentaje')?.touched && habiliForm.get('porcentaje')?.errors?.['required'] "
+                    class="alert alert-danger"> Porcentaje Requerido.</div>
+            </div>
+
+            <div class="mb-3 ">
+                <ul class="list-group list-group-horizontal ">
+                    <li class="list-group-item"><button type="button" (click)="limpiar()"
+                            class="btn btn-outline-primary mt-2" title="limpiar" data>Cancelar</button></li>
+                    <li class="list-group-item"> <button type="submit" class="btn btn-outline-primary mt-2"
+                            title="guardar">Guardar</button></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</form>

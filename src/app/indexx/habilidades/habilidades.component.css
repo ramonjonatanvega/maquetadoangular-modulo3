@@ -5,5 +5,5 @@ div#habilidades{
 /*efecto hover hard soft& skills(habilidades*/
 .progress:hover{
     transition: transform 0.3s ease-in-out;
-    transform: scale(1.05);    
+    transform: scale(1.02);    
 }

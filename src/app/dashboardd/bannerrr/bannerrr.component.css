@@ -2,7 +2,8 @@
     section.dashboard, section.panel{
         margin-top:5.5rem;
         background-color: rgb(138, 164, 155);
-            background-size: 100% ;
+            background-size: 1rem ;
             background-repeat: no-repeat;
-            min-height: 100vh;
+            min-height: 35rem;
+            
         }

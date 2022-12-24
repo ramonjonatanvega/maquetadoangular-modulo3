@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PortfolioService } from 'src/app/servicios/portfolio.service'; 
+import { Habilidad } from 'src/app/model/habilidad';
+import { HabilidadService } from 'src/app/servicios/habilidad.service';
+ 
 
 @Component({
   selector: 'app-habilidades',
@@ -7,21 +9,28 @@ import { PortfolioService } from 'src/app/servicios/portfolio.service';
   styleUrls: ['./habilidades.component.css']
 })
 export class HabilidadesComponent implements OnInit {
-//inicializar variables de instancia
-  habilidades: any=[]
+  habilidades: Habilidad[]=[]; //se llama al modelo que es un array
 
 
-  constructor(private portfolioService:PortfolioService) { }
+  constructor(private serviHabilidad: HabilidadService) { }
 
   ngOnInit(): void {
-    //esto es almacenar en la variable de instancia los datos recuperados por el servicio
-    this.portfolioService.getDatos().subscribe(portfolio => {
-      //console.log(portfolio);  
-      //aqui se define informacion a mostrar
-      this.habilidades=portfolio.habilidades;
-  
-  
-    });
+    this.cargarHabilidad();
+    
   }
+  cargarHabilidad():void{
+    this.serviHabilidad.lista().subscribe(data => {this.habilidades=data});
+  }
+
+  /*delete(id:number){
+    if(id != undefined){
+      this.serviHabilidad.delete(id).subscribe(
+        data =>{
+          alert("Habilidad eliminada correctamente")
+          this.cargarHabilidad();
+        }, err =>{
+          alert("no se pudo eliminar la habilidad");
+        })
+    }}*/
 
 }

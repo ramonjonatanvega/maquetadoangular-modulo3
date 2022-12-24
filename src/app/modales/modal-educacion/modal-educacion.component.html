@@ -1,0 +1,87 @@
+<!--dashborad educacion-->
+<!--se agrega el form y se crea ngsubmit=onsubmit y formgroup=educaform y despues educaform se declara en el modal-educacion.ts-->
+<form (ngSubmit)="onEnviar($event)" [formGroup]="educaForm">
+    <div class="row">
+        <div class="col-9-sm">
+            <h4 class="text-center"><b>Educacion</b></h4>
+
+            <div class="mb-3 ">
+                <label for="formFileSm" class="form-label">Nombre Institucion</label>
+                <!--formControlName pide nombre requerido y placeholder pide ingrese Nombre-->
+                <input type="text" class="form-control form-control-sm" id="formFileSm" required
+                    formControlName="nombreInstitucion" placeholder="Ingrese Nombre......"
+                    [(ngModel)]="nombreInstitucion">
+                <!--formulario reactivo-->
+                <div *ngIf="educaForm.get('nombreInstitucion')?.touched && educaForm.get('nombreInstitucion')?.errors?.['required'] "
+                    class="alert alert-danger"> Nombre Requerido.</div>
+                <div *ngIf="educaForm.get('nombreInstitucion')?.touched && educaForm.get('nombreInstitucion')?.errors?.['minlength'] "
+                    class="alert alert-danger"> minimo 8 characters.</div>
+                <!--formulario reactivo-->
+            </div>
+
+            <br>
+
+            <div class="mb-3">
+                <label for="formFileSm" class="form-label">Logo Institución</label>
+                <!--formControlName pide imagen requerida-->
+                <input class="form-control form-control-sm" id="formFileSm" type="file"
+                    formControlName="logoInstitucion" [(ngModel)]="logoInstitucion">
+                <!--formulario reactivo-->
+                <div *ngIf="educaForm.get('logoInstitucion')?.touched && educaForm.get('logoInstitucion')?.errors?.['required'] "
+                    class="alert alert-danger"> Imagen requerida.</div>
+                <!--formulario reactivo-->
+            </div>
+            
+            <br>
+
+            <div class="mb-3">
+                <label for="formFileSm" class="form-label">Titulo</label>
+                <!--formControlName hace pedir Titulo requerido y placeholder pide ingresar Titulo-->
+                <input type="text" class="form-control form-control-sm" id="formFileSm" required
+                    formControlName="titulo" placeholder="Ingrese Titulo......" [(ngModel)]="titulo">
+                <!--formulario reactivo-->
+                <div *ngIf="educaForm.get('titulo')?.touched && educaForm.get('titulo')?.errors?.['required'] "
+                    class="alert alert-danger"> Titulo Requerido.</div>
+                <div *ngIf="educaForm.get('titulo')?.touched && educaForm.get('titulo')?.errors?.['minlength'] "
+                    class="alert alert-danger"> minimo 10 characters.</div>
+                <!--formulario reactivo-->
+            </div>
+
+            <br>
+
+            <div class="mb-3">
+                <label for="inicioestudio">Fecha Inicio<small></small></label>
+                <div class="calendario">
+                    <input type="date" id="inicioestudio" name="inicioestudio" class="sm-form-control"
+                        formControlName="fechaInicio" [(ngModel)]="fechaInicio">
+                </div>
+            </div>
+
+
+            <div class="mb-3">
+                <label for="finestudio">Fecha Fin<small></small></label>
+                <div class="calendario">
+                    <input type="date" id="finestudio" name="finestudio" class="sm-form-control"
+                        formControlName="fechaFin" [(ngModel)]="fechaFin">
+                </div>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" formControlName="esEstudioActual" type="checkbox" value=""
+                    id="defaultCheck1" [(ngModel)]="esEstudioActual">
+                <label class="form-check-label" for="defaultCheck1">Actualidad</label>
+            </div>
+
+            <div class="mb-3 ">
+                <ul class="list-group list-group-horizontal ">
+                    <li class="list-group-item"><button type="button" (click)="limpiar()"
+                            class="btn btn-outline-primary mt-2" title="limpiar" data>Cancelar</button></li>
+                    <li class="list-group-item"> <button type="submit" class="btn btn-outline-primary mt-2"
+                            title="guardar">Guardar</button></li>
+                </ul>
+            </div>
+
+        </div>
+        
+    </div>
+</form>

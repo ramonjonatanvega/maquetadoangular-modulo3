@@ -19,6 +19,15 @@ import { NavbarrrComponent } from './dashboardd/navbarrr/navbarrr.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BannerrrComponent } from './dashboardd/bannerrr/bannerrr.component';
 import { ErrorComponent } from './error/error.component';
+import { FooterComponent } from './indexx/footer/footer.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ModalEducacionComponent } from './modales/modal-educacion/modal-educacion.component';
+import { ModalExperienciaComponent } from './modales/modal-experiencia/modal-experiencia.component';
+import { ModalPersonaComponent } from './modales/modal-persona/modal-persona.component';
+import { ModalHabilidadComponent } from './modales/modal-habilidad/modal-habilidad.component';
+import { ModalProyectoComponent } from './modales/modal-proyecto/modal-proyecto.component';
+
+
 
 
 
@@ -41,13 +50,24 @@ import { ErrorComponent } from './error/error.component';
     DashboardComponent,
     BannerrrComponent,
     ErrorComponent,
+    FooterComponent,
+    ModalEducacionComponent,
+    ModalExperienciaComponent,
+    ModalPersonaComponent,
+    ModalHabilidadComponent,
+    ModalProyectoComponent,
+
+ 
    
   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
