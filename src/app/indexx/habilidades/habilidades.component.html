@@ -1,21 +1,24 @@
- <!--habilidades columna 1 de skills-->
-      <section id="habilidades" class="habilidades">
-        <div class="card mat-card">
-          <div class="container-fluid" id="educacion">      
-            <h3 class="text-center">                
-             Hard soft & skills               
-             </h3>         
+<!--habilidades columna 1 de skills-->
+<section id="habilidades" class="habilidades">
+  <div class="card mat-card">
+    <div class="container-fluid" id="educacion">
+      <h3 class="text-center">
+        Hard soft & skills
+      </h3>
+    </div>
+
+    <div class="row" *ngFor="let habilidad of habilidades">
+      <div class="col-12">
+        <h6>{{habilidad.nombreHabilidad}}</h6>
+        <!--Iteracion sobre la variable de instancia y presentacion de datos mediante interpolacion-->
+        <div class="progress mb-4">
+          <div class="progress-bar " [ngClass]="" role="progressbar" aria-label="Basic example" aria-valuenow="65"
+            aria-valuemin="0" aria-valuemax="100" [style.width.%]="habilidad.porcentaje">{{habilidad.porcentaje}}%
           </div>
-             <br>  
-          <div class="row">           
-            <div class="col-12">
-              <!--Iteracion sobre la variable de instancia y presentacion de datos mediante interpolacion-->
-              <div   class="progress mb-5" *ngFor="let habilidad of habilidades" >
-                <div class="progress-bar " [ngClass]="" role="progressbar"  aria-label="Basic example"  aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"[style.width.%]="habilidad.porcentaje">{{habilidad.porcentaje}}% {{habilidad.nombreHabilidad}}</div>
-              </div>
-             
-            </div>
-        </div>    
+        </div>
+
       </div>
-    <br> 
-  </section>
+    </div>
+  </div>
+  <br>
+</section>

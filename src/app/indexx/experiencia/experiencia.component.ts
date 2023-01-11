@@ -29,26 +29,7 @@ export class ExperienciaComponent implements OnInit {
     this.serviExperiencia.lista().subscribe(data => {this.experiencias=data});
   }
 
+ 
 
 
-/*experiencia:any[]=[
-  {
-      id: 0,
-      logoEmpresa:"assets/IMG/descarga.png",
-      nombreEmpresa:"ElDon",
-      descripcionPuesto:"Manejo de Robot de Corte y Tizador Computarizado"
-  },
-  {
-      id: 1,
-      logoEmpresa:"assets/IMG/lowww.png",
-      nombreEmpresa:"Low Cost - Soluciones informaticas",
-      descripcionPuesto:"Tecnico en Reparación Y Systemas"
-  },
-  {
-      id: 2,
-      logoEmpresa:"assets/IMG/servicio-tecnico.png",
-      nombreEmpresa:"Electronica Low-Cost",
-      descripcionPuesto:"Reparacion de electronica en General:"
-  }
-]*/
 }

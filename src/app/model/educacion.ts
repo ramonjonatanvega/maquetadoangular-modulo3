@@ -1,5 +1,4 @@
 export class Educacion {
-
     id? : number;
     nombreInstitucion : string;
     logoInstitucion : string;           

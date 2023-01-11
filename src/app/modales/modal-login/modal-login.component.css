@@ -1,0 +1,82 @@
+#exampleModal{
+    background-color: rgba(78, 18, 38, 0.164);
+    backdrop-filter: blur(12px) saturate(90%) brightness(120%);
+    --bs-modal-width: 600px;
+    --bs-modal-padding: 1rem;
+}
+
+.modal-header{
+    border:none;
+} 
+
+.btn-close{
+    font-size: 20px;
+    margin-top: -30px;
+}
+
+.btn-close:focus{
+    background: transparent;
+    border-style:none;
+    box-shadow: none;
+}
+
+.modal-content{
+    background: rgba(219, 171, 201, 0.418);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 30px rgba(105, 102, 102, 0);
+}
+
+.modal-title{
+    font-size: 30px;
+}
+
+.form-control{
+    font-size: 20px;
+}
+
+.modal-footer{
+    border:none;
+}
+
+.btn{
+    background: #692a64;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    width: 40%;
+}
+
+.btn:hover{
+    background: #692a64;
+    color: white;
+    transform: scale(1.05);
+    transition: 0.5s;
+}
+
+@media(max-width: 768px){
+    .modal-content{
+        margin: 35px;
+    }
+
+    .modal-title{
+        font-size: 25px;
+    }
+
+    /*aca va lo del boton close*/
+    .btn-close{
+        font-size: 12px;
+    }
+    
+    .form-control{
+        font-size: 18px;
+    }
+
+    .btn{
+        font-size: 18px;
+        width: 40%;
+    }
+    
+}

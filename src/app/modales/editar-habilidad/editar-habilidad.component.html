@@ -1,0 +1,67 @@
+<!-- Modal   PEN de EXPERIENCIA-->
+<div class="modal fade" id="habilidadModalpen" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">EXPERIENCIA</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+  
+        <form [formGroup]="habiliForm" name="habilidadform">
+          <div class="modal-body">
+  
+            <ul class="p-0">
+              <li *ngFor="let habilidad of habilidades" class="d-flex justify-content-between align-items-center m-1 ">
+                <span>{{habilidad.id}}. {{habilidad.nombreHabilidad|uppercase}}</span>
+                <span class="d-flex justify-content-between gap-2">
+                  <!--lapicito rojo que se cambia al tocarlo-->
+                  <button type="button" class="btn btn-sm btn-outline-success pl-1 pr-1 m-0"
+                    (click)="cargarDetalle(habilidad.id)">
+                    <i class="fa-solid fa-pen"></i>
+                  </button>
+                  <!--Tachico de Basura que se hace fondo rojo al tocarlo-->
+                  <button type="button" class="btn btn-sm btn-outline-danger pl-1 pr-1 m-0"
+                    (click)="borrar(habilidad.id)">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </span>
+              </li>
+            </ul>
+            <!--esto es la validacion  renderizado condicional-->
+            <div class="input-group mb-3 bg-light" *ngIf="!!habiliForm.value.id">
+              <div class="input-group-prepend border-0">
+                <span class="input-group-text border-0" id="basic-addon1">ID:</span>
+              </div>
+              <input class="form-control outline-none border-0 bg-transparent" type="text" readonly formControlName="id">
+            </div>
+  
+  
+            <div class="mb-3">
+              <label for="nombreHabilidad" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="nombreHabilidad" placeholder="campo obligatorio" formControlName="nombreHabilidad"
+                [ngClass]="{'is-invalid': habiliForm.get('nombreHabilidad')?.errors && habiliForm.get('nombreHabilidad')?.touched, 'is-valid': habiliForm.get('nombreHabilidad')?.errors && habiliForm.get('nombreHabilidad')?.touched}">
+              <p class="text-danger" *ngIf="habiliForm.get('nombreHabilidad')?.touched && habiliForm.get('nombreHabilidad')?.errors?.['required']">
+                El Nombre de la Experiencia es requerida.
+              </p>
+            </div>
+  
+
+  
+              <div class="mb-3">
+                <label for="porcentaje" class="form-label">Modificar Porcentaje de Manejo (Escala 0-100)</label>
+                <input type="number" min="0" max="100" id="porcentaje" formControlName="porcentaje" placeholder="porcentaje...."
+                  [ngClass]="{'is-invalid': habiliForm.get('porcentaje')?.errors && habiliForm.get('porcentaje')?.touched, 'is-valid': habiliForm.get('porcentaje')?.errors && habiliForm.get('porcentaje')?.touched}">
+                <p class="text-danger" *ngIf="habiliForm.get('porcentaje')?.touched && habiliForm.get('porcentaje')?.errors?.['required']">
+                    Porcentaje requerido!!!
+                </p>
+              </div>
+
+            <div class="modal-footer">
+              <button class="btn btn-secondary" (click)="habiliForm.reset()">RESET</button>
+              <button class="btn btn-secondary" (click)="guardar()" >GUARDAR DATOS</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    

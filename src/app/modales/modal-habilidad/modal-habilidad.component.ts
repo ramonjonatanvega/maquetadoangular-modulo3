@@ -12,15 +12,15 @@ export class ModalHabilidadComponent implements OnInit {
    //creamos la propiedad
   habiliForm: FormGroup;
   nombreHabilidad: string ='';
-  porcentaje : string ='' ;
+  porcentaje : string= '';
   personaId : number = 1;
 
   constructor(private formBuilder: FormBuilder, private serviHabilidad: HabilidadService) { 
 
       //creamos el grupo de controles para el formulario
       this.habiliForm = this.formBuilder.group({
-        nombreHabilidad:['',[Validators.required, Validators.minLength(8)]],      
-        porcentaje:['',[Validators.required]],
+        nombreHabilidad:['',[Validators.required]],      
+        porcentaje:['', [Validators.required, Validators.min(0), Validators.max(100)]],
         })
     
     }

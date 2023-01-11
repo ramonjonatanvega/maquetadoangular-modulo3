@@ -13,8 +13,6 @@
                 <!--formulario reactivo-->
                 <div *ngIf="persoForm.get('nombre')?.touched && persoForm.get('nombre')?.errors?.['required'] "
                     class="alert alert-danger"> Nombre Requerido.</div>
-                <div *ngIf="persoForm.get('nombre')?.touched && persoForm.get('nombre')?.errors?.['minlength'] "
-                    class="alert alert-danger"> minimo 8 characters.</div>
             </div>
 
             <br>
@@ -27,8 +25,6 @@
                 <!--formulario reactivo-->
                 <div *ngIf="persoForm.get('apellido')?.touched && persoForm.get('apellido')?.errors?.['required'] "
                     class="alert alert-danger"> Apellido Requerido.</div>
-                <div *ngIf="persoForm.get('apellido')?.touched && persoForm.get('apellido')?.errors?.['minlength'] "
-                    class="alert alert-danger"> minimo 10 characters.</div>
             </div>
 
             <br>
@@ -65,8 +61,6 @@
                 <!--formulario reactivo-->
                 <div *ngIf="persoForm.get('titulo')?.touched && persoForm.get('titulo')?.errors?.['required'] "
                     class="alert alert-danger"> Titulo Requerido.</div>
-                <div *ngIf="persoForm.get('titulo')?.touched && persoForm.get('titulo')?.errors?.['minlength'] "
-                    class="alert alert-danger"> minimo 15 characters.</div>
             </div>
 
             <br>
@@ -79,8 +73,6 @@
                 <!--formulario reactivo-->
                 <div *ngIf="persoForm.get('ubicacion')?.touched && persoForm.get('ubicacion')?.errors?.['required'] "
                     class="alert alert-danger"> Ubicacion Requerida.</div>
-                <div *ngIf="persoForm.get('ubicacion')?.touched && persoForm.get('ubicacion')?.errors?.['minlength'] "
-                    class="alert alert-danger"> minimo 10 characters.</div>
             </div>
 
             <br>
@@ -94,8 +86,6 @@
                 <!--formulario reactivo-->
                 <div *ngIf="persoForm.get('acerca_de')?.touched && persoForm.get('acerca_de')?.errors?.['required'] "
                     class="alert alert-danger"> Campo Requerido.</div>
-                <div *ngIf="persoForm.get('acerca_de')?.touched && persoForm.get('acerca_de')?.errors?.['minlength'] "
-                    class="alert alert-danger"> minimo 10 characters.</div>
             </div>
 
             <div class="mb-3 ">

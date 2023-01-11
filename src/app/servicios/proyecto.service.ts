@@ -12,7 +12,7 @@ export class ProyectoService {
   constructor(private httpClient:HttpClient) { }
 
   public lista(): Observable<Proyecto[]>{
-    return this.httpClient.get<Proyecto[]>(this.url + 'lista');
+    return this.httpClient.get<Proyecto[]>(this.url + `lista`);
   }
 
   public listaPer(id: number): Observable<Proyecto[]>{
@@ -24,11 +24,11 @@ export class ProyectoService {
   }
 
   public crear(proyecto: Proyecto):Observable<any>{
-    return this.httpClient.post<any>(this.url + 'create', proyecto);
+    return this.httpClient.post<any>(this.url + `crear`, proyecto);
   }
  
   public delete(id: number):Observable<any>{
-    return this.httpClient.delete<any>(this.url + `delete/${id}`);
+    return this.httpClient.delete<any>(this.url + 'borrar/' + id);
     }
 
   public edit(proyecto: Proyecto):Observable<any>{

@@ -9,13 +9,13 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class PortfolioService {
-//El primer http se llama alias
+  url:string="http://localhost:8080/persona/"
   constructor(private http:HttpClient) { }
 
-  //Metodo observable que devuelve los datos
-  getDatos():Observable<any> {
+  //Metodo observable que obtiene los datos
+  obtenerDatos():Observable<any> {
     //Se llama al JSON con su path -ruta-, o bien, en su lugar se puede poner una URL para traer datos de un JSON online
-    return this.http.get('./assets/json/portfolio.json');
+    return this.http.get<any>(this.url+"persona");
   }
 
 }

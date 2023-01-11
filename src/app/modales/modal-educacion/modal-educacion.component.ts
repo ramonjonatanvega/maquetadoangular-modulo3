@@ -24,9 +24,9 @@ export class ModalEducacionComponent implements OnInit {
    
      //Creamos el grupo de controles para el formulario 
      this.educaForm=this.formBuilder.group({
-      nombreInstitucion:['',[Validators.required, Validators.minLength(8)]],
-      logoInstitucion:['',[Validators.required, Validators.minLength(8)]],     
-      titulo:['',[Validators.required, Validators.minLength(10)]],
+      nombreInstitucion:['',[Validators.required]],
+      logoInstitucion:['',[Validators.required]],     
+      titulo:['',[Validators.required]],
       fechaInicio :[''],
       fechaFin :[''],
       esEstudioActual :[''],

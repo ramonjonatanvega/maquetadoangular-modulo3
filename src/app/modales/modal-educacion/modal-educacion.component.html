@@ -5,6 +5,13 @@
         <div class="col-9-sm">
             <h4 class="text-center"><b>Educacion</b></h4>
 
+             <!-- boton PEN-->
+                    
+                        
+             <li type="button" class="list-group-item mt-4
+             mb-4 itemPenColor" data-bs-toggle="modal" data-bs-target="#educacionModalpen"> <i
+                   class="fa-sharp fa-solid fa-pen"></i></li>
+
             <div class="mb-3 ">
                 <label for="formFileSm" class="form-label">Nombre Institucion</label>
                 <!--formControlName pide nombre requerido y placeholder pide ingrese Nombre-->
@@ -14,9 +21,6 @@
                 <!--formulario reactivo-->
                 <div *ngIf="educaForm.get('nombreInstitucion')?.touched && educaForm.get('nombreInstitucion')?.errors?.['required'] "
                     class="alert alert-danger"> Nombre Requerido.</div>
-                <div *ngIf="educaForm.get('nombreInstitucion')?.touched && educaForm.get('nombreInstitucion')?.errors?.['minlength'] "
-                    class="alert alert-danger"> minimo 8 characters.</div>
-                <!--formulario reactivo-->
             </div>
 
             <br>
@@ -42,9 +46,6 @@
                 <!--formulario reactivo-->
                 <div *ngIf="educaForm.get('titulo')?.touched && educaForm.get('titulo')?.errors?.['required'] "
                     class="alert alert-danger"> Titulo Requerido.</div>
-                <div *ngIf="educaForm.get('titulo')?.touched && educaForm.get('titulo')?.errors?.['minlength'] "
-                    class="alert alert-danger"> minimo 10 characters.</div>
-                <!--formulario reactivo-->
             </div>
 
             <br>
@@ -84,4 +85,4 @@
         </div>
         
     </div>
-</form>
+    <app-editar-educacion></app-editar-educacion>

@@ -1,0 +1,110 @@
+<!-- Modal   PEN de EXPERIENCIA-->
+<div class="modal fade" id="experienciaModalpen" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">EXPERIENCIA</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+  
+        <form [formGroup]="experienForm" name="experienciaform">
+          <div class="modal-body">
+  
+            <ul class="p-0">
+              <li *ngFor="let experiencia of experiencias" class="d-flex justify-content-between align-items-center m-1 ">
+                <span>{{experiencia.id}}. {{experiencia.nombreEmpresa|uppercase}}</span>
+                <span class="d-flex justify-content-between gap-2">
+                  <!--lapicito rojo que se cambia al tocarlo-->
+                  <button type="button" class="btn btn-sm btn-outline-success pl-1 pr-1 m-0"
+                    (click)="cargarDetalle(experiencia.id)">
+                    <i class="fa-solid fa-pen"></i>
+                  </button>
+                  <!--Tachico de Basura que se hace fondo rojo al tocarlo-->
+                  <button type="button" class="btn btn-sm btn-outline-danger pl-1 pr-1 m-0"
+                    (click)="borrar(experiencia.id)">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </span>
+              </li>
+            </ul>
+            <!--esto es la validacion  renderizado condicional-->
+            <div class="input-group mb-3 bg-light" *ngIf="!!experienForm.value.id">
+              <div class="input-group-prepend border-0">
+                <span class="input-group-text border-0" id="basic-addon1">ID:</span>
+              </div>
+              <input class="form-control outline-none border-0 bg-transparent" type="text" readonly formControlName="id">
+            </div>
+  
+  
+            <div class="mb-3">
+              <label for="nombreEmpresa" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="nombreEmpresa" placeholder="campo obligatorio" formControlName="nombreEmpresa"
+                [ngClass]="{'is-invalid': experienForm.get('nombreEmpresa')?.errors && experienForm.get('nombreEmpresa')?.touched, 'is-valid': experienForm.get('nombreEmpresa')?.errors && experienForm.get('nombreEmpresa')?.touched}">
+              <p class="text-danger" *ngIf="experienForm.get('nombreEmpresa')?.touched && experienForm.get('nombreEmpresa')?.errors?.['required']">
+                El Nombre de la Experiencia es requerida.
+              </p>
+            </div>
+  
+            <div class="mb-3">
+              <label for="puesto" class="form-label">Puesto</label>
+              <input type="text" class="form-control" id="puesto" formControlName="puesto" placeholder="campo obligatorio"
+                [ngClass]="{'is-invalid': experienForm.get('puesto')?.errors && experienForm.get('puesto')?.touched, 'is-valid': experienForm.get('puesto')?.errors && experienForm.get('puesto')?.touched}">
+              <p class="text-danger" *ngIf="experienForm.get('puesto')?.touched && experienForm.get('puesto')?.errors?.['required']">
+                El tipo de experiencia es requerido!
+              </p>
+            </div>
+  
+            <div class="mb-3">
+              <label for="fechaInicio" class="form-label">Fecha Inicio</label>
+              <input type="fecha" class="form-control" id="fechaInicio" placeholder="" formControlName="fechaInicio">
+            </div>
+  
+            <div class="mb-3">
+              <label for="fechaFin" class="form-label">Fecha Fin</label>
+              <input type="fecha" class="form-control" id="fechaFin" placeholder="fechaFin" formControlName="fechaFin" >
+            </div>
+  
+  
+            <div class="mb-3">
+              <label for="logoEmpresa" class="form-label">Logo Empresa</label>
+              <input type="text" class="form-control" id="logoEmpresa" formControlName="logoEmpresa" placeholder="campo obligatorio"
+                [ngClass]="{'is-invalid': experienForm.get('logoEmpresa')?.errors && experienForm.get('logoEmpresa')?.touched, 'is-valid': experienForm.get('logoEmpresa')?.errors && experienForm.get('logoEmpresa')?.touched}">
+              <p class="text-danger" *ngIf="experienForm.get('logoEmpresa')?.touched && experienForm.get('logoEmpresa')?.errors?.['required']">
+                La Url es requerida!!!
+              </p>
+            </div>
+  
+  
+  
+  
+            <div class="mb-3">
+                <label for="descripcion" class="form-label">Descripcion del Puesto</label>
+                <input type="text" class="form-control" id="descripcion" formControlName="descripcion" placeholder="campo obligatorio"
+                  [ngClass]="{'is-invalid': experienForm.get('descripcion')?.errors && experienForm.get('descripcion')?.touched, 'is-valid': experienForm.get('descripcion')?.errors && experienForm.get('descripcion')?.touched}">
+                <p class="text-danger" *ngIf="experienForm.get('descripcion')?.touched && experienForm.get('descripcion')?.errors?.['required']">
+                  La Url es requerida!!!
+                </p>
+              </div>
+  
+          
+  
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"
+                formControlName="esTrabajoActual">
+              <label class="form-check-label" for="flexSwitchCheckDefault">Es Trabajo Actual?</label>
+            </div>
+  
+  
+            <div class="modal-footer">
+              <button class="btn btn-secondary" (click)="experienForm.reset()">RESET</button>
+              <button class="btn btn-secondary" (click)="guardar()" >GUARDAR DATOS</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+
+
+    

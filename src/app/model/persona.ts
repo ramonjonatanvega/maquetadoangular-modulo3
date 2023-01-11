@@ -8,10 +8,11 @@ export class Persona {
     titulo : string;
     ubicacion : string;
     acerca_de : string;
+    
  
     
 
-   constructor(nombre:string, apellido:string, banner:string, foto_perfil:string, titulo:string, ubicacion : string, acerca_de:string){
+   constructor(nombre:string, apellido:string, banner:string, foto_perfil:string, titulo:string, ubicacion:string, acerca_de:string ){
     this.nombre = nombre;
     this.apellido = apellido;
     this.banner = banner;
@@ -19,6 +20,7 @@ export class Persona {
     this.titulo = titulo;
     this.ubicacion = ubicacion;
     this.acerca_de = acerca_de;
+   
    
    } 
 

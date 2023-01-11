@@ -25,13 +25,14 @@ export class ModalExperienciaComponent implements OnInit {
   
       //creamos el grupo de controles para el formulario
       this.experienForm = this.formBuilder.group({
-      nombreEmpresa:['',[Validators.required, Validators.minLength(8)]],
-      logoEmpresa:['',[Validators.required, Validators.minLength(8)]],     
-      puesto:['',[Validators.required, Validators.minLength(10)]],
-      descripciondelPuesto:['',[Validators.required, Validators.minLength(15)]],
+      nombreEmpresa:['',[Validators.required]],
+      logoEmpresa:['',[Validators.required]],     
+      puesto:['',[Validators.required]],
+      descripciondelPuesto:['',[Validators.required]],
       fechaInicio :[''],
       fechaFin :[''],
       esTrabajoActual :[''],
+      personaid:[1],
       })
   
   }

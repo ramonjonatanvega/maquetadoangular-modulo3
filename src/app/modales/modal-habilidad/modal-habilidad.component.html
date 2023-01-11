@@ -5,29 +5,38 @@
         <div class="col-9-sm">
             <h4 class="text-center"><b>Habilidades</b></h4>
 
+ <!-- boton PEN-->
+                    
+                        
+ <li type="button" class="list-group-item mt-4
+ mb-4 itemPenColor" data-bs-toggle="modal" data-bs-target="#habilidadModalpen"> <i
+       class="fa-sharp fa-solid fa-pen"></i></li>
+
+
             <div class="mb-3">
 
                 <label for="formFileSm" class="form-label">Nombre de Habilidad</label>
                 <!--formControlName hace pedir nombre requerido y placeholder pide ingrese habilidad-->
                 <input class="form-control form-control-sm" id="formFileSm" type="text" required
-                    formControlName="nombreHabilidad" placeholder="Ingrese Habilidad......" [(ngModel)]="nombreHabilidad" >
+                    formControlName="nombreHabilidad" placeholder="Ingrese Habilidad......"
+                    [(ngModel)]="nombreHabilidad">
                 <!--formulario reactivo-->
                 <div *ngIf="habiliForm.get('nombreHabilidad')?.touched && habiliForm.get('nombreHabilidad')?.errors?.['required']  "
                     class="alert alert-danger"> nombre requerido.</div>
-                <div *ngIf="habiliForm.get('nombreHabilidad')?.touched && habiliForm.get('nombreHabilidad')?.errors?.['minlength'] "
-                    class="alert alert-danger"> minimo 8 characters.</div>
+
+
             </div>
 
             <br>
 
-            <div class="mb-3">
-                <label for="formFileSm" class="form-label">Porcentaje de Habilidad</label>
-                <!--formControlName hace pedir Porcentaje requerido y placeholder pide ingrese Porcentaje-->
-                <input class="form-control form-control-sm" id="formFileSm" type="text" required
-                    formControlName="porcentaje" placeholder="Ingrese Porcentaje %......" [(ngModel)]="porcentaje" >
-                <!--formulario reactivo-->
-                <div *ngIf="habiliForm.get('porcentaje')?.touched && habiliForm.get('porcentaje')?.errors?.['required'] "
-                    class="alert alert-danger"> Porcentaje Requerido.</div>
+            <div>
+                <label for="porcentaje" class="form-label">ModificarPorcentaje de Manejo (Escala 0-100)</label>
+                <input type="number" min="0" max="100" id="porcentaje" formControlName="porcentaje"
+                    [ngClass]="{'is-invalid': habiliForm.errors && habiliForm.touched, 'is-valid': !habiliForm.errors && habiliForm.touched}"
+                    [(ngModel)]="porcentaje">
+                <div *ngIf="habiliForm.get('porcentaje')?.touched && habiliForm.get('porcentaje')?.errors?.['required']  "
+                    class="alert alert-danger"> Porcentaje requerido.</div>
+
             </div>
 
             <div class="mb-3 ">
@@ -42,3 +51,4 @@
         </div>
     </div>
 </form>
+<app-editar-habilidad></app-editar-habilidad>

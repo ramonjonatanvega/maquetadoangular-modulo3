@@ -6,19 +6,25 @@
         <h3 class="text-center">Experiencia</h3>
       </div>
     </div>
+    
+    
     <br>
-
-    <div class="row" *ngFor="let experiencia of experiencias">
-      <div class="col-sm-2 text-center"><img src={{experiencia.logoEmpresa}} class="rounded-circle" id="logosexp" alt="Logo El Don"
-          width="80rem">
-          <p>{{experiencia.fechaInicio}} / {{experiencia.fechaFin}}</p>
+    
+    
+    <div class="row" *ngFor="let experiencia of experiencias; index as i">
+      <div class="col-sm-2 text-center"><img src={{experiencia.logoEmpresa}} class="rounded-circle" id="logosexp"
+          alt="Logo El Don" width="80rem">
+        <p>{{experiencia.fechaInicio}} / {{experiencia.fechaFin}}</p>
       </div>
       <div class="col-sm-5"><br>
         <h5 class="text-center"> <strong><u>{{experiencia.nombreEmpresa}}</u></strong></h5>
         <br>
-        <h6 class="text-center"><li><i>{{experiencia.puesto}}</i></li></h6>
+        <h6 class="text-center">
+          <li><i>{{experiencia.puesto}}</i></li>
+        </h6>
       </div>
       <div class="col-sm-5">
+        
         <p>{{experiencia.descripcion}}</p>
       </div>
       <hr>
@@ -26,4 +32,3 @@
     <br>
   </div>
 </section>
-

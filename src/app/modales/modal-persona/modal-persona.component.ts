@@ -26,13 +26,13 @@ export class ModalPersonaComponent implements OnInit {
     //Creamos el grupo de controles para el formulario 
     this.persoForm=this.formBuilder.group({
      //objetos definidos(declarados) para el formulario reactivo  persoForm 
-     nombre:['',[Validators.required, Validators.minLength(8)]],
-     apellido:['',[Validators.required, Validators.minLength(10)]],
+     nombre:['',[Validators.required]],
+     apellido:['',[Validators.required]],
      banner:['',[Validators.required]],
      foto_perfil:['',[Validators.required]],     
-     titulo:['',[Validators.required, ]],
-     ubicacion :[''],
-     acerca_de :[''],
+     titulo:['',[Validators.required ]],
+     ubicacion :['',[Validators.required ]],
+     acerca_de :['',[Validators.required ]],
      
   })
 

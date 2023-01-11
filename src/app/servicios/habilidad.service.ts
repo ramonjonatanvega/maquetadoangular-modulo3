@@ -16,7 +16,7 @@ export class HabilidadService {
 
  //traela lista de experiencia del backend
  public lista(): Observable<Habilidad[]>{
-  return this.httpClient.get<Habilidad[]>(this.url + 'lista');
+  return this.httpClient.get<Habilidad[]>(this.url + `lista`);
 }
 
 public listaPer(id: number): Observable<Habilidad[]>{
@@ -28,7 +28,7 @@ public detail(id: number):Observable<Habilidad>{
   }
 
 public crear(habilidad: Habilidad):Observable<any>{
-  return this.httpClient.post<any>(this.url + 'crear', habilidad);
+  return this.httpClient.post<any>(this.url + `crear`, habilidad);
 }
 
 public editar(habilidad: Habilidad):Observable<any>{
@@ -36,7 +36,7 @@ public editar(habilidad: Habilidad):Observable<any>{
   }
 
 public delete(id: number):Observable<any>{
-  return this.httpClient.delete<any>(this.url + 'delete/${id}');
+  return this.httpClient.delete<any>(this.url + 'borrar/' + id);
 }
 
 /*public edit(experiencia: Experiencia):Observable<any>{
