@@ -19,12 +19,13 @@ export class EditarEducacionComponent implements OnInit {
     //Creamos el grupo de controles para el formulario 
     this.educaForm=this.formBuilder.group({
       id:[''],
-      nombreInstitucion:['',[Validators.required]],
-      logoInstitucion:['',[Validators.required]],     
-      titulo:['',[Validators.required]],
+      nombreInstitucion:[''],
+      logoInstitucion:[''],     
+      titulo:[''],
       fechaInicio :[''],
       fechaFin :[''],
       esEstudioActual :[''],
+      personaid:[],
    })
   }
  
@@ -70,9 +71,9 @@ export class EditarEducacionComponent implements OnInit {
         }
       )
     } else {
-      this.serviEducacion.crear(educacion).subscribe(
+      this.serviEducacion.edit(educacion).subscribe(
         data => {
-          alert("Educación editada!!! UIHUUU!!!!");
+          alert("Educación editada!");
           this.cargarEducacion();
           this.educaForm.reset();
         }

@@ -7,21 +7,21 @@ import { AutenticacionService } from './autenticacion.service';
   providedIn: 'root'
 })
 export class GuardGuard implements CanActivate {
-  constructor(private autenticacionServicio:AutenticacionService, private rutas:Router){
+  constructor(private autenticacionServicio: AutenticacionService, private rutas: Router) {
 
-    
+
   }
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      let currentUser=this.autenticacionServicio.UsuarioAutenticado;
-      if (currentUser && currentUser.id) {
-        return true;
-      }else{
-       // this.rutas.navigate(['/modal-login']);
-        return true;
-      }
+    let currentUser = this.autenticacionServicio.usuarioAutenticado;
+    if (currentUser && currentUser.id) {
+      //this.rutas.navigate(['/dashboard']);
+      return true;
+    } else {
+      this.rutas.navigate(['/']);
+      return false;
+    }
   }
-  
 }

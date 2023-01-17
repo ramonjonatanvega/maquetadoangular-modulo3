@@ -11,7 +11,7 @@ export class ExperienciaService {
  // edit(value: any) {
   //  throw new Error('Method not implemented.');
  // }
-  url= 'http://localhost:8080/experiencia/'
+  URL= 'http://localhost:8080/experiencia/'
   constructor(private httpClient:HttpClient) { }
 
  
@@ -20,21 +20,25 @@ export class ExperienciaService {
 
   //traela lista de experiencia del backend
   public lista(): Observable<Experiencia[]>{
-    return this.httpClient.get<Experiencia[]>(this.url + `lista`);
+    return this.httpClient.get<Experiencia[]>(this.URL + `lista`);
   }
   public listaPer(id: number): Observable<Experiencia[]>{
-    return this.httpClient.get<Experiencia[]>(this.url + `ver/${id}`);
+    return this.httpClient.get<Experiencia[]>(this.URL + `ver/${id}`);
   }
 
- //ver experiencia por id
+ //ver Experiencia por id
   public detail(id: number):Observable<Experiencia>{
-    return this.httpClient.get<Experiencia>(this.url + `detail/${id}`);
+    return this.httpClient.get<Experiencia>(this.URL + `detail/${id}`);
     }
 
   //crea Experiencia
   public createExp(experiencia: Experiencia):Observable<any>{
-    return this.httpClient.post<any>(this.url + `crear`, experiencia);
+    return this.httpClient.post<any>(this.URL + `crear`, experiencia);
   }
+ //editar Experiencia
+  public edit(experiencia: Experiencia):Observable<any>{
+    return this.httpClient.put<any>(this.URL + 'update', experiencia);
+    }
  
    // updateExp(experiencia: Experiencia):Observable<any> {
     //  const urlExpId = this.url + `editar/${experiencia.id}`;
@@ -43,7 +47,7 @@ export class ExperienciaService {
 
   //elimina experiencia por id
   public deleteExp(id: number):Observable<any>{
-    return this.httpClient.delete<any>(this.url + 'borrar/' + id);
+    return this.httpClient.delete<any>(this.URL + 'borrar/' + id);
   }
 
  

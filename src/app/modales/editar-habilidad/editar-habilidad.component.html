@@ -3,7 +3,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">EXPERIENCIA</h1>
+          <h1 class="modal-title fs-5" id="exampleModalLabel">HABILIDADES</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
   
@@ -38,22 +38,14 @@
   
             <div class="mb-3">
               <label for="nombreHabilidad" class="form-label">Nombre</label>
-              <input type="text" class="form-control" id="nombreHabilidad" placeholder="campo obligatorio" formControlName="nombreHabilidad"
-                [ngClass]="{'is-invalid': habiliForm.get('nombreHabilidad')?.errors && habiliForm.get('nombreHabilidad')?.touched, 'is-valid': habiliForm.get('nombreHabilidad')?.errors && habiliForm.get('nombreHabilidad')?.touched}">
-              <p class="text-danger" *ngIf="habiliForm.get('nombreHabilidad')?.touched && habiliForm.get('nombreHabilidad')?.errors?.['required']">
-                El Nombre de la Experiencia es requerida.
-              </p>
+              <input type="text" class="form-control" id="nombreHabilidad" placeholder="campo obligatorio" formControlName="nombreHabilidad">
             </div>
   
 
   
               <div class="mb-3">
                 <label for="porcentaje" class="form-label">Modificar Porcentaje de Manejo (Escala 0-100)</label>
-                <input type="number" min="0" max="100" id="porcentaje" formControlName="porcentaje" placeholder="porcentaje...."
-                  [ngClass]="{'is-invalid': habiliForm.get('porcentaje')?.errors && habiliForm.get('porcentaje')?.touched, 'is-valid': habiliForm.get('porcentaje')?.errors && habiliForm.get('porcentaje')?.touched}">
-                <p class="text-danger" *ngIf="habiliForm.get('porcentaje')?.touched && habiliForm.get('porcentaje')?.errors?.['required']">
-                    Porcentaje requerido!!!
-                </p>
+                <input type="number" min="0" max="100" id="porcentaje" formControlName="porcentaje" placeholder="porcentaje....">
               </div>
 
             <div class="modal-footer">

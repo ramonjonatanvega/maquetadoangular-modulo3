@@ -29,7 +29,7 @@ export class EditarProyectoComponent implements OnInit {
       fecha: [''],
       descripcion: ['', [Validators.required, ]],
       url: [''],
-     
+      personaid:[],
     })
 
   }
@@ -38,12 +38,12 @@ export class EditarProyectoComponent implements OnInit {
 
   //trae lista para editar
   ngOnInit(): void {
-    this.cargarHabilidad();
+    this.cargarProyecto();
   }
   
   
 
-  cargarHabilidad(): void {
+  cargarProyecto(): void {
     this.serviProyecto.lista().subscribe(
       data => {
         this.proyectos = data;
@@ -76,16 +76,16 @@ export class EditarProyectoComponent implements OnInit {
     if (proyecto.id == '') {
       this.serviProyecto.crear(proyecto).subscribe(
         data => {
-          alert("Su nueva Experiencia fue añadida correctamente");
-          this.cargarHabilidad();
+          alert("Su nuevo Proyecto fue añadido correctamente");
+          this.cargarProyecto();
           this.proyecForm.reset();
         }
       )
     } else {
-      this.serviProyecto.crear(proyecto).subscribe(
+      this.serviProyecto.edit(proyecto).subscribe(
         data => {
-          alert("Experiencia editada!!! BRAVOOOOO!!!!");
-          this.cargarHabilidad();
+          alert("Proyecto editado!");
+          this.cargarProyecto();
           this.proyecForm.reset();
         }
       )
@@ -97,7 +97,7 @@ export class EditarProyectoComponent implements OnInit {
     this.serviProyecto.delete(id).subscribe(
       db => {
           alert("se pudo eliminar satisfactoriamente")
-          this.cargarHabilidad();
+          this.cargarProyecto();
           
         },
         error => {

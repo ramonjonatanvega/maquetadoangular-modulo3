@@ -23,8 +23,9 @@ export class EditarHabilidadComponent implements OnInit {
 //creamos el grupo de controles para el formulario
 this.habiliForm = this.formBuilder.group({
   id:[''],
-  nombreHabilidad:['',[Validators.required]],      
-  porcentaje:['', [Validators.required, Validators.min(0), Validators.max(100)]],
+  nombreHabilidad:[''],      
+  porcentaje:[''],
+  personaid:[],
   })
 
   }
@@ -71,15 +72,15 @@ this.habiliForm = this.formBuilder.group({
     if (habilidad.id == '') {
       this.serviHabilidad.crear(habilidad).subscribe(
         data => {
-          alert("Su nueva Experiencia fue añadida correctamente");
+          alert("Su nueva Habilidad fue añadida correctamente");
           this.cargarHabilidad();
           this.habiliForm.reset();
         }
       )
     } else {
-      this.serviHabilidad.crear(habilidad).subscribe(
+      this.serviHabilidad.edit(habilidad).subscribe(
         data => {
-          alert("Experiencia editada!!! BRAVOOOOO!!!!");
+          alert("Habilidad editada!");
           this.cargarHabilidad();
           this.habiliForm.reset();
         }

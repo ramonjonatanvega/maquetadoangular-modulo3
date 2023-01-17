@@ -38,40 +38,28 @@
   
             <div class="mb-3">
               <label for="nombreEmpresa" class="form-label">Nombre</label>
-              <input type="text" class="form-control" id="nombreEmpresa" placeholder="campo obligatorio" formControlName="nombreEmpresa"
-                [ngClass]="{'is-invalid': experienForm.get('nombreEmpresa')?.errors && experienForm.get('nombreEmpresa')?.touched, 'is-valid': experienForm.get('nombreEmpresa')?.errors && experienForm.get('nombreEmpresa')?.touched}">
-              <p class="text-danger" *ngIf="experienForm.get('nombreEmpresa')?.touched && experienForm.get('nombreEmpresa')?.errors?.['required']">
-                El Nombre de la Experiencia es requerida.
-              </p>
+              <input type="text" class="form-control" id="nombreEmpresa" placeholder="campo obligatorio" formControlName="nombreEmpresa">
             </div>
   
             <div class="mb-3">
               <label for="puesto" class="form-label">Puesto</label>
-              <input type="text" class="form-control" id="puesto" formControlName="puesto" placeholder="campo obligatorio"
-                [ngClass]="{'is-invalid': experienForm.get('puesto')?.errors && experienForm.get('puesto')?.touched, 'is-valid': experienForm.get('puesto')?.errors && experienForm.get('puesto')?.touched}">
-              <p class="text-danger" *ngIf="experienForm.get('puesto')?.touched && experienForm.get('puesto')?.errors?.['required']">
-                El tipo de experiencia es requerido!
-              </p>
+              <input type="text" class="form-control" id="puesto" formControlName="puesto" placeholder="campo obligatorio">            
             </div>
   
             <div class="mb-3">
               <label for="fechaInicio" class="form-label">Fecha Inicio</label>
-              <input type="fecha" class="form-control" id="fechaInicio" placeholder="" formControlName="fechaInicio">
+              <input type="fecha" class="form-control" id="fechaInicio" placeholder="fechaInicio...." formControlName="fechaInicio">
             </div>
   
             <div class="mb-3">
               <label for="fechaFin" class="form-label">Fecha Fin</label>
-              <input type="fecha" class="form-control" id="fechaFin" placeholder="fechaFin" formControlName="fechaFin" >
+              <input type="fecha" class="form-control" id="fechaFin" placeholder="fechaFin...." formControlName="fechaFin" >
             </div>
   
   
             <div class="mb-3">
               <label for="logoEmpresa" class="form-label">Logo Empresa</label>
-              <input type="text" class="form-control" id="logoEmpresa" formControlName="logoEmpresa" placeholder="campo obligatorio"
-                [ngClass]="{'is-invalid': experienForm.get('logoEmpresa')?.errors && experienForm.get('logoEmpresa')?.touched, 'is-valid': experienForm.get('logoEmpresa')?.errors && experienForm.get('logoEmpresa')?.touched}">
-              <p class="text-danger" *ngIf="experienForm.get('logoEmpresa')?.touched && experienForm.get('logoEmpresa')?.errors?.['required']">
-                La Url es requerida!!!
-              </p>
+              <input type="text" class="form-control" id="logoEmpresa" formControlName="logoEmpresa" placeholder="campo obligatorio">             
             </div>
   
   
@@ -79,11 +67,7 @@
   
             <div class="mb-3">
                 <label for="descripcion" class="form-label">Descripcion del Puesto</label>
-                <input type="text" class="form-control" id="descripcion" formControlName="descripcion" placeholder="campo obligatorio"
-                  [ngClass]="{'is-invalid': experienForm.get('descripcion')?.errors && experienForm.get('descripcion')?.touched, 'is-valid': experienForm.get('descripcion')?.errors && experienForm.get('descripcion')?.touched}">
-                <p class="text-danger" *ngIf="experienForm.get('descripcion')?.touched && experienForm.get('descripcion')?.errors?.['required']">
-                  La Url es requerida!!!
-                </p>
+                <input type="text" class="form-control" id="descripcion" formControlName="descripcion" placeholder="campo obligatorio">               
               </div>
   
           

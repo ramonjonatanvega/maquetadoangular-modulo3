@@ -28,14 +28,14 @@ export class EditarExperienciaComponent implements OnInit {
      //Creamos el grupo de controles para el formulario 
      this.experienForm = this.formBuilder.group({
       id:[''],
-      nombreEmpresa:['',[Validators.required]],
-      logoEmpresa:['',[Validators.required]],     
-      puesto:['',[Validators.required]],
-      descripcion:['',[Validators.required]],
+      nombreEmpresa:[''],
+      logoEmpresa:[''],     
+      puesto:[''],
+      descripcion:[''],
       fechaInicio :[''],
       fechaFin :[''],
       esTrabajoActual :[''],
-     
+      personaId:[],
       })
 
   }
@@ -88,7 +88,7 @@ export class EditarExperienciaComponent implements OnInit {
         }
       )
     } else {
-      this.serviExperiencia.createExp(experiencia).subscribe(
+      this.serviExperiencia.edit(experiencia).subscribe(
         data => {
           alert("Experiencia editada!!! BRAVOOOOO!!!!");
           this.cargarExperiencia();

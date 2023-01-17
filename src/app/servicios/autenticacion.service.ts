@@ -1,27 +1,28 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, EMPTY, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AutenticacionService {
-  usuarioAutenticado: any;
-
+  
+  url="http://localhost:8080/persona/login";
+  currentUserSubject: BehaviorSubject<any>;
+  
   
 
 
-  getToken() {
-    throw new Error('Method not implemented.');
-  }
-  url="http://localhost:8080/persona/login";
-  currentUserSubject: BehaviorSubject<any>;
-  UsuarioAutenticado: any;
+  
+  
   constructor (private http:HttpClient) { 
   this.currentUserSubject= new BehaviorSubject<any>(JSON.parse(sessionStorage.getItem
     ('currentUser')||'{}'));
 }
+
+
+
 
 
 IniciarSesion(credenciales:any):Observable<any>{
@@ -30,6 +31,10 @@ IniciarSesion(credenciales:any):Observable<any>{
     return data;
   }));
 }
+get usuarioAutenticado () {
+  return this.currentUserSubject.value;
+}
+
 
  logOut():void{
   window.sessionStorage.clear();

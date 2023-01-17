@@ -23,15 +23,17 @@ export class EducacionService {
     return this.httpClient.get<Educacion>(this.url + `detail/${id}`);
     }
   
-    //crear estudio
+    //crear educacion
     public crear(educacion: Educacion):Observable<any>{
       return this.httpClient.post<any>(this.url + `crear`, educacion);
       }
-  
-    public edit(Estudio: Educacion):Observable<any>{
-      return this.httpClient.put<any>(this.url + 'update', Estudio);
+    
+    //editar educacion  
+    public edit(educacion: Educacion):Observable<any>{
+      return this.httpClient.put<any>(this.url + 'update', educacion);
       }
-  //eliminar estudio
+
+  //eliminar educacion
     public delete(id: number):Observable<any>{
       return this.httpClient.delete<any>(this.url + 'borrar/' + id);
       }

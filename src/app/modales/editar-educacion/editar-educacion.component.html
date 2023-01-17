@@ -38,40 +38,28 @@
   
             <div class="mb-3">
               <label for="nombreInstitucion" class="form-label">Nombre Institucion</label>
-              <input type="text" class="form-control" id="nombreInstitucion" placeholder="campo obligatorio" formControlName="nombreInstitucion"
-                [ngClass]="{'is-invalid': educaForm.get('nombreInstitucion')?.errors && educaForm.get('nombreInstitucion')?.touched, 'is-valid': educaForm.get('nombreInstitucion')?.errors && educaForm.get('nombreInstitucion')?.touched}">
-              <p class="text-danger" *ngIf="educaForm.get('nombreInstitucion')?.touched && educaForm.get('nombreInstitucion')?.errors?.['required']">
-                El Nombre de la Educacion es requerida.
-              </p>
+              <input type="text" class="form-control" id="nombreInstitucion" placeholder="campo obligatorio" formControlName="nombreInstitucion">
             </div>
   
             <div class="mb-3">
               <label for="logoInstitucion" class="form-label">Logo Institucion</label>
-              <input type="text" class="form-control" id="logoInstitucion" formControlName="logoInstitucion" placeholder="campo obligatorio"
-                [ngClass]="{'is-invalid': educaForm.get('logoInstitucion')?.errors && educaForm.get('logoInstitucion')?.touched, 'is-valid': educaForm.get('logoInstitucion')?.errors && educaForm.get('logoInstitucion')?.touched}">
-              <p class="text-danger" *ngIf="educaForm.get('logoInstitucion')?.touched && educaForm.get('logoInstitucion')?.errors?.['required']">
-                El Logo es requerido!
-              </p>
+              <input type="text" class="form-control" id="logoInstitucion" formControlName="logoInstitucion" placeholder="campo obligatorio">
             </div>
   
             <div class="mb-3">
               <label for="fechaInicio" class="form-label">Fecha Inicio</label>
-              <input type="fecha" class="form-control" id="fechaInicio" placeholder="" formControlName="fechaInicio">
+              <input type="fecha" class="form-control" id="fechaInicio" placeholder="fechaInicio...." formControlName="fechaInicio">
             </div>
   
             <div class="mb-3">
               <label for="fechaFin" class="form-label">Fecha Fin</label>
-              <input type="fecha" class="form-control" id="fechaFin" placeholder="fechaFin" formControlName="fechaFin" >
+              <input type="fecha" class="form-control" id="fechaFin" placeholder="fechaFin..." formControlName="fechaFin" >
             </div>
   
   
             <div class="mb-3">
               <label for="titulo" class="form-label">Titulo</label>
-              <input type="text" class="form-control" id="titulo" formControlName="titulo" placeholder="campo obligatorio"
-                [ngClass]="{'is-invalid': educaForm.get('titulo')?.errors && educaForm.get('titulo')?.touched, 'is-valid': educaForm.get('titulo')?.errors && educaForm.get('titulo')?.touched}">
-              <p class="text-danger" *ngIf="educaForm.get('titulo')?.touched && educaForm.get('titulo')?.errors?.['required']">
-                La Url es requerida!!!
-              </p>
+              <input type="text" class="form-control" id="titulo" formControlName="titulo" placeholder="campo obligatorio">
             </div>       
   
             <div class="form-check form-switch">

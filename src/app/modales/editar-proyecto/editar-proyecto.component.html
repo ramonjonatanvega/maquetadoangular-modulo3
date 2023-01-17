@@ -3,7 +3,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">EXPERIENCIA</h1>
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Proyecto</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
   
@@ -38,20 +38,12 @@
   
             <div class="mb-3">
               <label for="nombre" class="form-label">Nombre</label>
-              <input type="text" class="form-control" id="nombre" placeholder="campo obligatorio" formControlName="nombre"
-                [ngClass]="{'is-invalid': proyecForm.get('nombre')?.errors && proyecForm.get('nombre')?.touched, 'is-valid': proyecForm.get('nombre')?.errors && proyecForm.get('nombre')?.touched}">
-              <p class="text-danger" *ngIf="proyecForm.get('nombre')?.touched && proyecForm.get('nombre')?.errors?.['required']">
-                El Nombre  es requerido.
-              </p>
+              <input type="text" class="form-control" id="nombre" placeholder="campo obligatorio" formControlName="nombre">
             </div>
 
             <div class="mb-3">
-                <label for="imagen" class="form-label">Imgen</label>
-                <input type="text" class="form-control" id="imagen" formControlName="imagen" placeholder="campo obligatorio"
-                  [ngClass]="{'is-invalid': proyecForm.get('imagen')?.errors && proyecForm.get('imagen')?.touched, 'is-valid': proyecForm.get('imagen')?.errors && proyecForm.get('imagen')?.touched}">
-                <p class="text-danger" *ngIf="proyecForm.get('imagen')?.touched && proyecForm.get('imagen')?.errors?.['required']">
-                  La Url es requerida!!!
-                </p>
+                <label for="imagen" class="form-label">Imagen</label>
+                <input type="text" class="form-control" id="imagen" formControlName="imagen" placeholder="campo obligatorio">
               </div>
 
               <div class="mb-3">
@@ -61,20 +53,12 @@
 
               <div class="mb-3">
                 <label for="descripcion" class="form-label">Descripcion </label>
-                <input type="text" class="form-control" id="descripcion" formControlName="descripcion" placeholder="campo obligatorio"
-                  [ngClass]="{'is-invalid': proyecForm.get('descripcion')?.errors && proyecForm.get('descripcion')?.touched, 'is-valid': proyecForm.get('descripcion')?.errors && proyecForm.get('descripcion')?.touched}">
-                <p class="text-danger" *ngIf="proyecForm.get('descripcion')?.touched && proyecForm.get('descripcion')?.errors?.['required']">
-                 Descripcion requerida!!!
-                </p>
+                <input type="text" class="form-control" id="descripcion" formControlName="descripcion" placeholder="campo obligatorio">
               </div>
   
             <div class="mb-3">
               <label for="url" class="form-label">Url</label>
-              <input type="text" class="form-control" id="url" formControlName="url" placeholder="campo obligatorio"
-                [ngClass]="{'is-invalid': proyecForm.get('url')?.errors && proyecForm.get('url')?.touched, 'is-valid': proyecForm.get('url')?.errors && proyecForm.get('url')?.touched}">
-              <p class="text-danger" *ngIf="proyecForm.get('url')?.touched && proyecForm.get('url')?.errors?.['required']">
-                Url del proyecto!
-              </p>
+              <input type="text" class="form-control" id="url" formControlName="url" placeholder="campo obligatorio">
             </div>      
   
             <div class="modal-footer">

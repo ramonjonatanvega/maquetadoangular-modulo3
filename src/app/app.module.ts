@@ -30,6 +30,7 @@ import { EditarExperienciaComponent } from './modales/editar-experiencia/editar-
 import { EditarEducacionComponent } from './modales/editar-educacion/editar-educacion.component';
 import { EditarHabilidadComponent } from './modales/editar-habilidad/editar-habilidad.component';
 import { EditarProyectoComponent } from './modales/editar-proyecto/editar-proyecto.component';
+import { EditarPersonaComponent } from './modales/editar-persona/editar-persona.component';
 
 
 
@@ -62,6 +63,7 @@ import { EditarProyectoComponent } from './modales/editar-proyecto/editar-proyec
     EditarEducacionComponent,
     EditarHabilidadComponent,
     EditarProyectoComponent,
+    EditarPersonaComponent,
     
 
   
