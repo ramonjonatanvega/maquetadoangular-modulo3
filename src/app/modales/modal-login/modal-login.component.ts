@@ -54,7 +54,7 @@ get Contrasenia(){
            
             // alert("hola" + data.id);
             if (data) {
-              alert("Estas logueado");
+              
              
               this.ruta.navigate(['/dashboard']);
             } else {alert(" ACCESO INCORRECTO");

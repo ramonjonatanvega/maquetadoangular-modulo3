@@ -5,84 +5,105 @@
         <div class="col-9-sm">
             <h4 class="text-center"><b>Educacion</b></h4>
 
-             <!-- boton PEN-->
-                    
-                        
-             <li type="button" class="list-group-item mt-4
-             mb-4 itemPenColor" data-bs-toggle="modal" data-bs-target="#educacionModalpen"> <i
-                   class="fa-sharp fa-solid fa-pen"></i></li>
+            <!-- boton PEN-->
 
+            <div class="col-1">
+                <li type="button" class="list-group-item mt-4
+             mb-4 itemPenColor" data-bs-toggle="modal" data-bs-target="#educacionModalpen"> <i
+                        class="fa-sharp fa-solid fa-pen"></i></li>
+            </div>
             <div class="mb-3 ">
                 <label for="formFileSm" class="form-label">Nombre Institucion</label>
                 <!--formControlName pide nombre requerido y placeholder pide ingrese Nombre-->
                 <input type="text" class="form-control form-control-sm" id="formFileSm" required
                     formControlName="nombreInstitucion" placeholder="Ingrese Nombre......"
-                    [(ngModel)]="nombreInstitucion">
+                    [(ngModel)]="nombreInstitucion"
+                    [ngClass]="{'is-invalid': NombreInstitucion.errors && NombreInstitucion.touched, 'is-valid': !NombreInstitucion.errors && NombreInstitucion.touched}">
                 <!--formulario reactivo-->
-                <div *ngIf="educaForm.get('nombreInstitucion')?.touched && educaForm.get('nombreInstitucion')?.errors?.['required'] "
-                    class="alert alert-danger"> Nombre Requerido.</div>
-            </div>
-
-            <br>
-
-            <div class="mb-3">
-                <label for="formFileSm" class="form-label">Logo Institución</label>
-                <!--formControlName pide imagen requerida-->
-                <input class="form-control form-control-sm" id="formFileSm" type="file"
-                    formControlName="logoInstitucion" [(ngModel)]="logoInstitucion">
-                <!--formulario reactivo-->
-                <div *ngIf="educaForm.get('logoInstitucion')?.touched && educaForm.get('logoInstitucion')?.errors?.['required'] "
-                    class="alert alert-danger"> Imagen requerida.</div>
-                <!--formulario reactivo-->
-            </div>
-            
-            <br>
-
-            <div class="mb-3">
-                <label for="formFileSm" class="form-label">Titulo</label>
-                <!--formControlName hace pedir Titulo requerido y placeholder pide ingresar Titulo-->
-                <input type="text" class="form-control form-control-sm" id="formFileSm" required
-                    formControlName="titulo" placeholder="Ingrese Titulo......" [(ngModel)]="titulo">
-                <!--formulario reactivo-->
-                <div *ngIf="educaForm.get('titulo')?.touched && educaForm.get('titulo')?.errors?.['required'] "
-                    class="alert alert-danger"> Titulo Requerido.</div>
-            </div>
-
-            <br>
-
-            <div class="mb-3">
-                <label for="inicioestudio">Fecha Inicio<small></small></label>
-                <div class="calendario">
-                    <input type="date" id="inicioestudio" name="inicioestudio" class="sm-form-control"
-                        formControlName="fechaInicio" [(ngModel)]="fechaInicio">
+                <div *ngIf="NombreInstitucion.errors && NombreInstitucion.touched">
+                    <p *ngIf="NombreInstitucion.hasError('required')" class="text-danger">
+                        El Nombre es requerido.
+                    </p>
                 </div>
-            </div>
+
+                <br>
+
+                <div class="mb-3">
+                    <label for="formFileSm" class="form-label">Logo Institución</label>
+                    <!--formControlName pide imagen requerida-->
+                    <input class="form-control form-control-sm" id="formFileSm" type="file"
+                        formControlName="logoInstitucion" [(ngModel)]="logoInstitucion"
+                        [ngClass]="{'is-invalid': LogoInstitucion.errors && LogoInstitucion.touched, 'is-valid': !LogoInstitucion.errors && LogoInstitucion.touched}">
+                    <!--formulario reactivo-->
+                    <div *ngIf="LogoInstitucion.errors && LogoInstitucion.touched">
+                        <p *ngIf="LogoInstitucion.hasError('required')" class="text-danger">
+                            El Logo es requerido.
+                        </p>
+                    </div>
+
+                    <br>
+
+                    <div class="mb-3">
+                        <label for="formFileSm" class="form-label">Titulo</label>
+                        <!--formControlName hace pedir Titulo requerido y placeholder pide ingresar Titulo-->
+                        <input type="text" class="form-control form-control-sm" id="formFileSm" required
+                            formControlName="titulo" placeholder="Ingrese Titulo......" [(ngModel)]="titulo"
+                            [ngClass]="{'is-invalid': Titulo.errors && Titulo.touched, 'is-valid': !Titulo.errors && Titulo.touched}">
+                        <!--formulario reactivo-->
+                        <div *ngIf="Titulo.errors && Titulo.touched">
+                            <p *ngIf="Titulo.hasError('required')" class="text-danger">
+                                El Titulo es requerido.
+                            </p>
+                        </div>
+
+                        <br>
+
+                        <div class="mb-3">
+                            <label for="inicioestudio">Fecha Inicio<small></small></label>
+                            <div class="calendario">
+                                <input type="date" id="inicioestudio" name="inicioestudio" class="sm-form-control"
+                                    formControlName="fechaInicio" [(ngModel)]="fechaInicio"
+                                    [ngClass]="{'is-invalid': FechaInicio.errors && FechaInicio.touched, 'is-valid': !FechaInicio.errors && FechaInicio.touched}">
+                                <!--formulario reactivo-->
+                                <div *ngIf="FechaInicio.errors && FechaInicio.touched">
+                                    <p *ngIf="FechaInicio.hasError('required')" class="text-danger">
+                                        Fecha requerida.
+                                    </p>
+                                </div>
 
 
-            <div class="mb-3">
-                <label for="finestudio">Fecha Fin<small></small></label>
-                <div class="calendario">
-                    <input type="date" id="finestudio" name="finestudio" class="sm-form-control"
-                        formControlName="fechaFin" [(ngModel)]="fechaFin">
-                </div>
-            </div>
+                                <div class="mb-3">
+                                    <label for="finestudio">Fecha Fin<small></small></label>
+                                    <div class="calendario">
+                                        <input type="date" id="finestudio" name="finestudio" class="sm-form-control"
+                                            formControlName="fechaFin" [(ngModel)]="fechaFin"
+                                            [ngClass]="{'is-invalid': FechaFin.errors && FechaFin.touched, 'is-valid': !FechaFin.errors && FechaFin.touched}">
+                                        <!--formulario reactivo-->
+                                        <div *ngIf="FechaFin.errors && FechaFin.touched">
+                                            <p *ngIf="FechaFin.hasError('required')" class="text-danger">
+                                                Fecha requerida.
+                                            </p>
+                                        </div>
 
-            <div class="form-check">
-                <input class="form-check-input" formControlName="esEstudioActual" type="checkbox" value=""
-                    id="defaultCheck1" [(ngModel)]="esEstudioActual">
-                <label class="form-check-label" for="defaultCheck1">Actualidad</label>
-            </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" formControlName="esEstudioActual"
+                                                type="checkbox" value="" id="defaultCheck1"
+                                                [(ngModel)]="esEstudioActual">
+                                            <label class="form-check-label" for="defaultCheck1">Actualidad</label>
+                                        </div>
 
-            <div class="mb-3 ">
-                <ul class="list-group list-group-horizontal ">
-                    <li class="list-group-item"><button type="button" (click)="limpiar()"
-                            class="btn btn-outline-primary mt-2" title="limpiar" data>Cancelar</button></li>
-                    <li class="list-group-item"> <button type="submit" class="btn btn-outline-primary mt-2"
-                            title="guardar">Guardar</button></li>
-                </ul>
-            </div>
+                                        <div class="mb-3 ">
+                                            <ul class="list-group list-group-horizontal ">
+                                                <li class="list-group-item"><button type="button" (click)="limpiar()"
+                                                        class="btn btn-outline-primary mt-2" title="limpiar"
+                                                        data>Cancelar</button></li>
+                                                <li class="list-group-item"> <button type="submit"
+                                                        class="btn btn-outline-primary mt-2"
+                                                        title="guardar">Guardar</button></li>
+                                            </ul>
+                                        </div>
 
-        </div>
-        
-    </div>
-    <app-editar-educacion></app-editar-educacion>
+                                    </div>
+
+                                </div>
+                                <app-editar-educacion></app-editar-educacion>

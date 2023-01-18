@@ -11,64 +11,82 @@ import { ExperienciaService } from 'src/app/servicios/experiencia.service';
 export class ModalExperienciaComponent implements OnInit {
   //creamos la propiedad
   experienForm: FormGroup;
-  nombreEmpresa: string ='';
-  logoEmpresa : string ='';
-  puesto : string = '';
-  descripciondelPuesto : string ='';
-  fechaInicio : string = '';
-  fechaFin : string = '';
-  esTrabajoActual : boolean = false;
-  personaId : number = 1;
-  
+  nombreEmpresa: string = '';
+  logoEmpresa: string = '';
+  puesto: string = '';
+  descripciondelPuesto: string = '';
+  fechaInicio: string = '';
+  fechaFin: string = '';
+  esTrabajoActual: boolean = false;
+  personaId: number = 1;
+
   //importamos el FormBuilder
-  constructor( private formBuilder : FormBuilder, private serviExperiencia : ExperienciaService) { 
-  
-      //creamos el grupo de controles para el formulario
-      this.experienForm = this.formBuilder.group({
-      nombreEmpresa:['',[Validators.required]],
-      logoEmpresa:['',[Validators.required]],     
-      puesto:['',[Validators.required]],
-      descripciondelPuesto:['',[Validators.required]],
-      fechaInicio :[''],
-      fechaFin :[''],
-      esTrabajoActual :[''],
-      personaid:[1],
-      })
-  
+  constructor(private formBuilder: FormBuilder, private serviExperiencia: ExperienciaService) {
+
+    //creamos el grupo de controles para el formulario
+    this.experienForm = this.formBuilder.group({
+      nombreEmpresa: ['', [Validators.required]],
+      logoEmpresa: ['', [Validators.required]],
+      puesto: ['', [Validators.required]],
+      descripciondelPuesto: ['', [Validators.required]],
+      fechaInicio: ['', [Validators.required]],
+      fechaFin: ['', [Validators.required]],
+      esTrabajoActual: [''],
+      personaid: [1],
+    })
+
   }
-   
-  ngOnInit(): void {}
+
+  ngOnInit(): void { }
 
 
-  get Puesto(){
+  get NombreEmpresa() {
+    return this.experienForm.get("nombreEmpresa");
+  }
+  get LogoEmpresa() {
+    return this.experienForm.get("logoEmpresa");
+  }
+
+  get Puesto() {
     return this.experienForm.get("puesto");
-    }
-    get Descripcion(){
-      return this.experienForm.get("descripcion");
-    }
-    
-    onCreate(): void {
-      const experiencia = new Experiencia(this.nombreEmpresa, this.logoEmpresa,  this.puesto, this.descripciondelPuesto, this.fechaInicio, this.fechaFin, 
-       this.esTrabajoActual, this.personaId);
-     this.serviExperiencia.createExp(experiencia).subscribe(data =>{alert("Experiencia añadida");
-    window.location.reload();
-  });
   }
-  limpiar() : void{
+
+  get DescripciondelPuesto() {
+    return this.experienForm.get("descripciondelPuesto");
+  }
+
+  get FechaInicio() {
+    return this.experienForm.get("fechaInicio");
+  }
+  get FechaFin() {
+    return this.experienForm.get("fechaFin");
+  }
+
+
+
+  onCreate(): void {
+    const experiencia = new Experiencia(this.nombreEmpresa, this.logoEmpresa, this.puesto, this.descripciondelPuesto, this.fechaInicio, this.fechaFin,
+      this.esTrabajoActual, this.personaId);
+    this.serviExperiencia.createExp(experiencia).subscribe(data => {
+      alert("Experiencia añadida");
+      window.location.reload();
+    });
+  }
+  limpiar(): void {
     this.experienForm.reset();
     alert("se limpio correctamente");
   }
 
-  onEnviar(event: Event){
+  onEnviar(event: Event) {
     event.preventDefault();
-    if(this.experienForm.valid){
+    if (this.experienForm.valid) {
       this.onCreate();
       alert("se creo correctamente");
-    }else{
+    } else {
       alert("falló en la carga, intente nuevamente");
       this.experienForm.markAllAsTouched();
-    }    
-  }
     }
+  }
+}
 
 

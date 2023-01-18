@@ -28,8 +28,8 @@ export class ModalHabilidadComponent implements OnInit {
   ngOnInit(): void {}
 
   //declarar para los campos
-  get Habilidad(){
-    return this.habiliForm.get("habilidad");
+  get NombreHabilidad(){
+    return this.habiliForm.get("nombreHabilidad");
   }
 
   get Porcentaje(){

@@ -90,7 +90,7 @@ export class EditarExperienciaComponent implements OnInit {
     } else {
       this.serviExperiencia.edit(experiencia).subscribe(
         data => {
-          alert("Experiencia editada!!! BRAVOOOOO!!!!");
+          alert("Experiencia editada!");
           this.cargarExperiencia();
           this.experienForm.reset();
         }

@@ -27,8 +27,8 @@ export class ModalEducacionComponent implements OnInit {
       nombreInstitucion:['',[Validators.required]],
       logoInstitucion:['',[Validators.required]],     
       titulo:['',[Validators.required]],
-      fechaInicio :[''],
-      fechaFin :[''],
+      fechaInicio :['',[Validators.required]],
+      fechaFin :['',[Validators.required]],
       esEstudioActual :[''],
    })
 
@@ -36,13 +36,27 @@ export class ModalEducacionComponent implements OnInit {
 
   ngOnInit(): void {}
   
-  get Educacion(){
-    return this.educaForm.get("educacion");
+  get NombreInstitucion(){
+    return this.educaForm.get("nombreInstitucion");
   }
 
-  get Descripcion(){
-    return this.educaForm.get("descripcion");
+  get LogoInstitucion(){
+    return this.educaForm.get("logoInstitucion");
   }
+
+  get Titulo(){
+    return this.educaForm.get("titulo");
+  }
+
+  get FechaInicio(){
+    return this.educaForm.get("fechaInicio");
+  }
+
+  get FechaFin(){
+    return this.educaForm.get("fechaFin");
+  }
+
+
  
   onCrear(): void {
     const educacion = new Educacion(this.nombreInstitucion, this.logoInstitucion,  this.titulo, this.fechaInicio, this.fechaFin, 

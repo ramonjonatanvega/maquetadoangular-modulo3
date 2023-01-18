@@ -6,125 +6,133 @@
 
             <h4 class="text-center"><b>Experiencia Laboral</b></h4>
 
-            
 
-                    <!-- boton PEN-->
-                    
-                        
-                            <li type="button" class="list-group-item mt-4
+
+            <!-- boton PEN-->
+
+            <div class="col-1">
+                <li type="button" class="list-group-item mt-4
                               mb-4 itemPenColor" data-bs-toggle="modal" data-bs-target="#experienciaModalpen"> <i
-                                    class="fa-sharp fa-solid fa-pen"></i></li>
-                        
-                    
+                        class="fa-sharp fa-solid fa-pen"></i></li>
+            </div>
 
 
-                    <div class="mb-3-sm ">
-                        <label for="formFileSm" class="form-label">Nombre Empresa</label>
-                        <!--formControlName hace pedir nombre requerida y placeholder pide ingrese Nombre-->
-                        <input type="text" class="form-control form-control-sm" id="formFileSm" required
-                            formControlName="nombreEmpresa" placeholder="Ingrese Nombre......"
-                            [(ngModel)]="nombreEmpresa">
-                        <!--formulario reactivo-->
-                        <div *ngIf="experienForm.get('nombreEmpresa')?.touched && experienForm.get('nombreEmpresa')?.errors?.['required'] "
-                            class="alert alert-danger"> nombre requerido.</div>
-                    </div>
 
-                    <br>
-
-                    <div class="mb-3">
-                        <label for="formFileSm" class="form-label">Logo de Empresa</label>
-                        <!--formControlName hace pedir imagen requerida-->
-                        <input class="form-control form-control-sm" id="formFileSm" type="file"
-                            formControlName="logoEmpresa" [(ngModel)]="logoEmpresa">
-                        <!--formulario reactivo-->
-                        <div *ngIf="experienForm.get('logoEmpresa')?.touched && experienForm.get('logoEmpresa')?.errors?.['required'] "
-                            class="alert alert-danger"> Imagen requerida.</div>
-                    </div>
-
-                    <br>
-
-                    <div class="mb-3-sm ">
-                        <label for="formFileSm" class="form-label">Puesto</label>
-                        <!--formControlName hace pedir puesto requerida y placeholder pide ingrese puesto-->
-                        <input type="text" class="form-control form-control-sm" id="formFileSm" required
-                            formControlName="puesto" placeholder="Ingrese Puesto......" [(ngModel)]="puesto"
-                            [ngClass]="{'is-invalid': Puesto?.errors && Puesto?.touched, 'is-valid': !Puesto?.errors && Puesto?.touched}">
-                        <!--formulario reactivo-->
-                        <div *ngIf="experienForm.get('puesto')?.touched && experienForm.get('puesto')?.errors?.['required'] "
-                            class="alert alert-danger"> Puesto Requerido.</div>
-                    </div>
-
-                    <br>
-
-                    <div class="mb-3">
-
-                        <label for="inicio">Fecha Inicio<small></small></label>
-                        <div class="calendario">
-                            <input type="date" id="inicio" name="inicio" class="sm-form-control"
-                                formControlName="fechaInicio" [(ngModel)]="fechaInicio">
-                            <!--sirve para agrandar el boton y moverlo hacia los costados-->
-                            <!--<div class="d-grid gap-2 col-1 float-end">
-                        <button type="button" class="btn btn-primary">Guardar</button>
-                    </div>-->
-                        </div>
-
-                    </div>
-
-
-                    <div class="mb-3">
-                        <div class="row">
-                            <label for="fin">Fecha Fin<small></small></label>
-                            <div class="calendario">
-                                <input type="date" id="fin" name="fin" class="sm-form-control"
-                                    formControlName="fechaFin" [(ngModel)]="fechaFin">
-                                <!--sirve para agrandar el boton y moverlo hacia los costados-->
-                                <!--<div class="d-grid gap-2 col-1 float-end">
-                        <button type="button" class="btn btn-primary">Guardar</button>
-                    </div>-->
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" formControlName="esTrabajoActual" type="checkbox" value=""
-                            id="defaultCheck1" [(ngModel)]="esTrabajoActual">
-                        <label class="form-check-label" for="defaultCheck1">Actualidad</label>
-                    </div>
-
-                    <br>
-
-                    <div class="mb-3">
-                        <label for="formFileSm" class="form-label">Descripcion</label>
-                        <!--formControlName hace pedir descripcion requerida y placeholder pide ingrese Descripcion-->
-                        <textarea class="form-control" name="comment" id="comment" rows="4"
-                            placeholder="Ingrese Descripcion......" formControlName="descripciondelPuesto" required
-                            [(ngModel)]="descripciondelPuesto"></textarea>
-                        <!--<input  class="form-control form-control-sm" id="formFileSm" type="text"
-                    formControlName="descripciondelPuesto" required>-->
-                        <!--formulario reactivo-->
-                        <div *ngIf="experienForm.get('descripciondelPuesto')?.touched && experienForm.get('descripciondelPuesto')?.errors?.['required'] "
-                            class="alert alert-danger"> descripcion requerida.</div>
-                        <div *ngIf="experienForm.get('descripciondelPuesto')?.touched && experienForm.get('descripciondelPuesto')?.errors?.['minlength'] "
-                            class="alert alert-danger"> minimo 15 characters.</div>
-                        <!--formulario reactivo-->
-                        <!--sirve para agrandar el boton y moverlo hacia los costados-->
-                        <!--<div class="d-grid gap-2 col-1 float-end">
-                <button type="button" class="btn btn-primary">Guardar</button>
-              </div>-->
-                    </div>
-
-                    <div class="mb-3 ">
-                        <ul class="list-group list-group-horizontal ">
-                            <li class="list-group-item"><button type="button" (click)="limpiar()"
-                                    class="btn btn-outline-primary mt-2" title="limpiar" data>Cancelar</button></li>
-                            <li class="list-group-item"> <button type="submit" class="btn btn-outline-primary mt-2"
-                                    title="guardar">Guardar</button></li>
-                        </ul>
-                    </div>
-
+            <div class="mb-3-sm ">
+                <label for="formFileSm" class="form-label">Nombre Empresa</label>
+                <!--formControlName hace pedir nombre requerida y placeholder pide ingrese Nombre-->
+                <input type="text" class="form-control form-control-sm" id="formFileSm" required
+                    formControlName="nombreEmpresa" placeholder="Ingrese Nombre......" [(ngModel)]="nombreEmpresa"
+                    [ngClass]="{'is-invalid': NombreEmpresa.errors && NombreEmpresa.touched, 'is-valid': !NombreEmpresa.errors && NombreEmpresa.touched}">
+                <!--formulario reactivo-->
+                <div *ngIf="NombreEmpresa.errors && NombreEmpresa.touched">
+                    <p *ngIf="NombreEmpresa.hasError('required')" class="text-danger">
+                        El Nombre es requerido.
+                    </p>
                 </div>
             </div>
-        
-    
+
+            <br>
+
+            <div class="mb-3">
+                <label for="formFileSm" class="form-label">Logo de Empresa</label>
+                <!--formControlName hace pedir imagen requerida-->
+                <input class="form-control form-control-sm" id="formFileSm" type="file" formControlName="logoEmpresa"
+                    [(ngModel)]="logoEmpresa"
+                    [ngClass]="{'is-invalid': LogoEmpresa.errors && LogoEmpresa.touched, 'is-valid': !LogoEmpresa.errors && LogoEmpresa.touched}">
+                <!--formulario reactivo-->
+                <div *ngIf="LogoEmpresa.errors && LogoEmpresa.touched">
+                    <p *ngIf="LogoEmpresa.hasError('required')" class="text-danger">
+                        El Logo es requerido.
+                    </p>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="mb-3-sm ">
+                <label for="formFileSm" class="form-label">Puesto</label>
+                <!--formControlName hace pedir puesto requerida y placeholder pide ingrese puesto-->
+                <input type="text" class="form-control form-control-sm" id="formFileSm" required
+                    formControlName="puesto" placeholder="Ingrese Puesto......" [(ngModel)]="puesto"
+                    [ngClass]="{'is-invalid': Puesto.errors && Puesto.touched, 'is-valid': !Puesto.errors && Puesto.touched}">
+                <!--formulario reactivo-->
+                <div *ngIf="Puesto.errors && Puesto.touched">
+                    <p *ngIf="Puesto.hasError('required')" class="text-danger">
+                        El Puesto es requerido.
+                    </p>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="mb-3">
+
+                <label for="inicio">Fecha Inicio<small></small></label>
+                <div class="calendario">
+                    <input type="date" id="inicio" name="inicio" class="sm-form-control" formControlName="fechaInicio"
+                        [(ngModel)]="fechaInicio"
+                        [ngClass]="{'is-invalid': FechaInicio.errors && FechaInicio.touched, 'is-valid': !FechaInicio.errors && FechaInicio.touched}">
+                    <!--formulario reactivo-->
+                    <div *ngIf="FechaInicio.errors && FechaInicio.touched">
+                        <p *ngIf="FechaInicio.hasError('required')" class="text-danger">
+                            Fecha Requerida.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <div class="row">
+                    <label for="fin">Fecha Fin<small></small></label>
+                    <div class="calendario">
+                        <input type="date" id="fin" name="fin" class="sm-form-control" formControlName="fechaFin"
+                            [(ngModel)]="fechaFin"
+                            [ngClass]="{'is-invalid': FechaFin.errors && FechaFin.touched, 'is-valid': !FechaFin.errors && FechaFin.touched}">
+                        <!--formulario reactivo-->
+                        <div *ngIf="FechaFin.errors && FechaFin.touched">
+                            <p *ngIf="FechaFin.hasError('required')" class="text-danger">
+                                Fecha Requerida.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" formControlName="esTrabajoActual" type="checkbox" value=""
+                    id="defaultCheck1" [(ngModel)]="esTrabajoActual">
+                <label class="form-check-label" for="defaultCheck1">Actualidad</label>
+            </div>
+
+            <br>
+
+            <div class="mb-3">
+                <label for="formFileSm" class="form-label">Descripcion</label>
+                <!--formControlName hace pedir descripcion requerida y placeholder pide ingrese Descripcion-->
+                <textarea class="form-control" name="comment" id="comment" rows="4"
+                    placeholder="Ingrese Descripcion......" formControlName="descripciondelPuesto" required
+                    [(ngModel)]="descripciondelPuesto"
+                    [ngClass]="{'is-invalid': DescripciondelPuesto.errors && DescripciondelPuesto.touched, 'is-valid': !DescripciondelPuesto.errors && DescripciondelPuesto.touched}"></textarea>
+                <div *ngIf="DescripciondelPuesto.errors && DescripciondelPuesto.touched">
+                    <p *ngIf="DescripciondelPuesto.hasError('required')" class="text-danger">
+                        La descripcion es requerida.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mb-3 ">
+                <ul class="list-group list-group-horizontal ">
+                    <li class="list-group-item"><button type="button" (click)="limpiar()"
+                            class="btn btn-outline-primary mt-2" title="limpiar" data>Cancelar</button></li>
+                    <li class="list-group-item"> <button type="submit" class="btn btn-outline-primary mt-2"
+                            title="guardar">Guardar</button></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+
 </form>
 <app-editar-experiencia></app-editar-experiencia>
