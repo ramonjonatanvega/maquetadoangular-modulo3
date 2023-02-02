@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Habilidad } from 'src/app/model/habilidad';
 import { HabilidadService } from 'src/app/servicios/habilidad.service';
 
@@ -9,35 +9,30 @@ import { HabilidadService } from 'src/app/servicios/habilidad.service';
   styleUrls: ['./editar-habilidad.component.css']
 })
 export class EditarHabilidadComponent implements OnInit {
-  habiliForm:FormGroup;
-    
- 
-  habilidades:Habilidad[] = [];
-  
+  habiliForm: FormGroup;
+
+
+  habilidades: Habilidad[] = [];
+
   constructor(private serviHabilidad: HabilidadService,
-              private formBuilder: FormBuilder,
-              
-               )
-               { 
-               
-//creamos el grupo de controles para el formulario
-this.habiliForm = this.formBuilder.group({
-  id:[''],
-  nombreHabilidad:[''],      
-  porcentaje:[''],
-  personaid:[],
-  })
+    private formBuilder: FormBuilder) {
+
+    //creamos el grupo de controles para el formulario
+    this.habiliForm = this.formBuilder.group({
+      id: [''],
+      nombreHabilidad: [''],
+      porcentaje: [''],
+      personaid: [],
+    })
 
   }
 
- 
 
-  //trae lista para editar
   ngOnInit(): void {
     this.cargarHabilidad();
   }
-  
-  
+
+
 
   cargarHabilidad(): void {
     this.serviHabilidad.lista().subscribe(
@@ -61,44 +56,29 @@ this.habiliForm = this.formBuilder.group({
       }
     )
   }
-  //👇 esto es solo para hacer pruebas en local
 
 
+  //Se obtienen todos los valores guardados en el Formgroup=habiliForm, y se los envía a la base de datos.
   guardar() {
-    console.log("FUNCIONA!!!")
-    let habilidad = this.habiliForm.value;
-    console.log()
-
-    if (habilidad.id == '') {
-      this.serviHabilidad.crear(habilidad).subscribe(
-        data => {
-          alert("Su nueva Habilidad fue añadida correctamente");
-          this.cargarHabilidad();
-          this.habiliForm.reset();
-        }
-      )
-    } else {
-      this.serviHabilidad.edit(habilidad).subscribe(
-        data => {
-          alert("Habilidad editada!");
-          this.cargarHabilidad();
-          this.habiliForm.reset();
-        }
-      )
-    }
+    this.serviHabilidad.edit(this.habiliForm.value).subscribe(data => {
+      alert("Habilidad  modificada");
+      window.location.reload();
+    }, err => {
+      alert("Se ha producido un error, intente nuevamente");
+    });
   }
- 
+
 
   borrar(id: number) {
     this.serviHabilidad.delete(id).subscribe(
       db => {
-          alert("se pudo eliminar satisfactoriamente")
-          this.cargarHabilidad();
-          
-        },
-        error => {
+        alert("se pudo eliminar satisfactoriamente")
+        this.cargarHabilidad();
+
+      },
+      error => {
         alert("No se pudo eliminar")
-        })
-      }
-    
+      })
   }
+
+}

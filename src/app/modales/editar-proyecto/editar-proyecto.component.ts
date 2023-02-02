@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Proyecto } from 'src/app/model/proyecto';
+import { ImageService } from 'src/app/servicios/image.service';
 import { ProyectoService } from 'src/app/servicios/proyecto.service';
 
 @Component({
@@ -9,39 +10,36 @@ import { ProyectoService } from 'src/app/servicios/proyecto.service';
   styleUrls: ['./editar-proyecto.component.css']
 })
 export class EditarProyectoComponent implements OnInit {
-  proyecForm:FormGroup;
-    
- 
-  proyectos:Proyecto[] = [];
-  
-  constructor(private serviProyecto:ProyectoService,
-              private formBuilder: FormBuilder,
-              
-               )
-               { 
-               
+  proyecForm: FormGroup;
 
-     //creamos el grupo de controles para el formulario
+
+  proyectos: Proyecto[] = [];
+
+  constructor(public serviProyecto: ProyectoService,
+    private formBuilder: FormBuilder,
+    public imagenesService: ImageService
+
+  ) {
+
+
+    //creamos el grupo de controles para el formulario
     this.proyecForm = this.formBuilder.group({
-      id:[''],
-      nombre: ['', [Validators.required]],
-      imagen: ['', [Validators.required,]],
+      id: [''],
+      nombre: [''],
+      imagen: [''],
       fecha: [''],
-      descripcion: ['', [Validators.required, ]],
+      descripcion: [''],
       url: [''],
-      personaid:[],
+      personaid: [],
     })
 
   }
 
- 
 
-  //trae lista para editar
   ngOnInit(): void {
     this.cargarProyecto();
   }
-  
-  
+
 
   cargarProyecto(): void {
     this.serviProyecto.lista().subscribe(
@@ -53,6 +51,7 @@ export class EditarProyectoComponent implements OnInit {
 
   cargarDetalle(id: number) {
     this.serviProyecto.detail(id).subscribe(
+      
       {
         next: (data) => {
           this.proyecForm.patchValue(data);
@@ -65,44 +64,37 @@ export class EditarProyectoComponent implements OnInit {
       }
     )
   }
-  //👇 esto es solo para hacer pruebas en local
 
-
-  guardar() {
-    console.log("FUNCIONA!!!")
-    let proyecto = this.proyecForm.value;
-    console.log()
-
-    if (proyecto.id == '') {
-      this.serviProyecto.crear(proyecto).subscribe(
-        data => {
-          alert("Su nuevo Proyecto fue añadido correctamente");
-          this.cargarProyecto();
-          this.proyecForm.reset();
-        }
-      )
-    } else {
-      this.serviProyecto.edit(proyecto).subscribe(
-        data => {
-          alert("Proyecto editado!");
-          this.cargarProyecto();
-          this.proyecForm.reset();
-        }
-      )
-    }
+  guardar(): void {
+    /*
+   Acá se obtiene la propiedad de imagen y valor del modal ubicado en el servicio de proyecto y se introduce la url obtenida de la imagen, 
+   proveniente de Firebase y se la manda a la base de datos, junto con los demás valores del formulario.
+   */
+    this.serviProyecto.edit(this.proyecForm.value).subscribe(data => {
+      alert(" Proyecto Editado");
+      window.location.reload();
+    }, err => {
+      alert("Se ha producido un error, intente nuevamente");
+    });
   }
- 
+
 
   borrar(id: number) {
     this.serviProyecto.delete(id).subscribe(
       db => {
-          alert("se pudo eliminar satisfactoriamente")
-          this.cargarProyecto();
-          
-        },
-        error => {
+        alert("se pudo eliminar satisfactoriamente")
+        this.cargarProyecto();
+
+      },
+      error => {
         alert("No se pudo eliminar")
-        })
-      }
-    
+      })
   }
+
+  //Esta función obtiene la imagen del input de tipo File, para, posteriormente, mandarla a Firebase.
+  uploadImage($event: any) {
+    const name = 'Proyecto';
+    this.imagenesService.uploadImage($event, name);
+  }
+
+}

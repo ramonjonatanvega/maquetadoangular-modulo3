@@ -9,65 +9,47 @@
           <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
             <a routerLink="/index"><button class="nav-link active" id="v-pills-home-tab" type="button">Home</button></a>
 
-            <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile"
-              type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Perfil</button>
+            <!--agregar perfil-->
+            <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="modal"
+              data-bs-target="#modal-agregar-persona" type="button" role="tab" aria-controls="v-pills-profile"
+              aria-selected="false">Perfil</button>
 
             <!--<button class="nav-link" id="v-pills-acerca-tab" data-bs-toggle="pill" data-bs-target="#v-pills-acerca" 
               type="button" role="tab" aria-controls="v-pills-acerca" aria-selected="false">Acerca de mi</button>-->
 
-            <button class="nav-link" id="v-pills-exp-tab" data-bs-toggle="pill" data-bs-target="#v-pills-exp"
-              type="button" role="tab" aria-controls="v-pills-exp" aria-selected="false">Experiencia Laboral</button>
+            <!--agregar experiencia-->
+            <button class="nav-link" id="v-pills-exp-tab" data-bs-toggle="modal"
+              data-bs-target="#modal-agregar-experiencia" type="button" role="tab" aria-controls="v-pills-exp"
+              aria-selected="false">Experiencia Laboral</button>
 
-            <button class="nav-link" id="v-pills-educacion-tab" data-bs-toggle="pill"
-              data-bs-target="#v-pills-educacion" type="button" role="tab" aria-controls="v-pills-educacion"
+            <!--agregar educacion-->
+            <button class="nav-link" id="v-pills-educacion-tab" data-bs-toggle="modal"
+              data-bs-target="#modal-agregar-educacion" type="button" role="tab" aria-controls="v-pills-educacion"
               aria-selected="false">Educacion</button>
 
-            <button class="nav-link" id="v-pills-habilidades-tab" data-bs-toggle="pill"
-              data-bs-target="#v-pills-habilidades" type="button" role="tab" aria-controls="v-pills-habilidades"
+            <!--agregar habilidad-->
+            <button class="nav-link" id="v-pills-habilidades-tab" data-bs-toggle="modal"
+              data-bs-target="#modal-agregar-habilidad" type="button" role="tab" aria-controls="v-pills-habilidades"
               aria-selected="false">Hard & soft Skills</button>
 
-            <button class="nav-link" id="v-pills-proyectos-tab" data-bs-toggle="pill"
-              data-bs-target="#v-pills-proyectos" type="button" role="tab" aria-controls="v-pills-proyectos"
+            <!--agregar proyecto-->
+            <button class="nav-link" id="v-pills-proyectos-tab" data-bs-toggle="modal"
+              data-bs-target="#modal-agregar-proyecto" type="button" role="tab" aria-controls="v-pills-proyectos"
               aria-selected="false">Proyectos</button>
           </div>
-          <!--
-                    <div class="tab-content" id="v-pills-tabContent">              
-                      <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabindex="0">...</div>
-                      <div class="tab-pane fade" id="v-pills-exp" role="tabpanel" aria-labelledby="v-pills-exp-tab" tabindex="0">...</div>
-                      <div class="tab-pane fade" id="v-pills-educacion" role="tabpanel" aria-labelledby="v-pills-educacion-tab" tabindex="0">...</div>
-                      <div class="tab-pane fade" id="v-pills-habilidades" role="tabpanel" aria-labelledby="v-pills-habilidades-tab" tabindex="0">...</div>
-                      <div class="tab-pane fade" id="v-pills-proyectos" role="tabpanel" aria-labelledby="v-pills-proyectos-tab" tabindex="0">...</div>
-                    </div>-->
         </div>
       </div>
 
-      <!--body-->
-      <!--perfil-->
-      <div class="col-6 tab-content" id="v-pills-tabContent">
-        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab"
-          tabindex="0">
-          <app-modal-persona></app-modal-persona> <!--dashboard perfil-->
-        </div>
-        <!--<div class="tab-pane fade" id="v-pills-acerca" role="tabpanel" aria-labelledby="v-pills-acerca-tab" tabindex="0">
+      <app-modal-persona></app-modal-persona> <!--agregar perfil-->
+      <app-modal-experiencia></app-modal-experiencia><!--agregar experiencia-->
+      <app-modal-educacion></app-modal-educacion> <!--agregar educacion-->
+      <app-modal-habilidad></app-modal-habilidad> <!--agregar habilidad-->
+      <app-modal-proyecto></app-modal-proyecto> <!--agregar proyecto-->
+
+      <!--<div class="tab-pane fade" id="v-pills-acerca" role="tabpanel" aria-labelledby="v-pills-acerca-tab" tabindex="0">
         
-      </div>-->
-        <div class="tab-pane fade" id="v-pills-educacion" role="tabpanel" aria-labelledby="v-pills-educacion-tab"
-          tabindex="0">
-          <app-modal-educacion></app-modal-educacion> <!--dashborad educacion-->
-        </div>
-        <div class="tab-pane fade " id="v-pills-exp" role="tabpanel" aria-labelledby="v-pills-exp-tab" tabindex="0">
-          <app-modal-experiencia></app-modal-experiencia> <!--dashboard experiencia-->
-        </div>
-        <div class="tab-pane fade" id="v-pills-habilidades" role="tabpanel" aria-labelledby="v-pills-habilidades-tab"
-          tabindex="0">
-          <app-modal-habilidad></app-modal-habilidad> <!--dashboard habilidades-->
-        </div>
-        <div class="tab-pane fade" id="v-pills-proyectos" role="tabpanel" aria-labelledby="v-pills-proyectos-tab"
-          tabindex="0">
-          <app-modal-proyecto></app-modal-proyecto> <!--dashboard proyectos-->
-        </div>
-      </div>
+       </div>-->
+
     </div><!--cierra tab-pane-->
   </div><!--cierra div padre-->
-
 </section>

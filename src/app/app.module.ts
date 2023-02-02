@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 import { IndexComponent } from './index/index.component';
 import { NavbarComponent } from './indexx/navbar/navbar.component';
@@ -18,7 +20,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { BannerrrComponent } from './dashboardd/bannerrr/bannerrr.component';
 import { ErrorComponent } from './error/error.component';
 import { FooterComponent } from './indexx/footer/footer.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalEducacionComponent } from './modales/modal-educacion/modal-educacion.component';
 import { ModalExperienciaComponent } from './modales/modal-experiencia/modal-experiencia.component';
 import { ModalPersonaComponent } from './modales/modal-persona/modal-persona.component';
@@ -31,6 +32,9 @@ import { EditarEducacionComponent } from './modales/editar-educacion/editar-educ
 import { EditarHabilidadComponent } from './modales/editar-habilidad/editar-habilidad.component';
 import { EditarProyectoComponent } from './modales/editar-proyecto/editar-proyecto.component';
 import { EditarPersonaComponent } from './modales/editar-persona/editar-persona.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 
 
 
@@ -74,6 +78,8 @@ import { EditarPersonaComponent } from './modales/editar-persona/editar-persona.
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideStorage(() => getStorage()),
    
    
     

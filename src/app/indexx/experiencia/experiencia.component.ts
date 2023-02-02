@@ -17,12 +17,7 @@ export class ExperienciaComponent implements OnInit {
 
   ngOnInit(): void {
     this.cargarExperiencia();
-    /*this.portfolioService.getDatos().subscribe(portfolio => {
-      //console.log(portfolio);  
-      //aqui se define informacion a mostrar
-      this.experiencias=portfolio.experiencias;
-     
-     });*/
+    
   }
 
   cargarExperiencia():void{

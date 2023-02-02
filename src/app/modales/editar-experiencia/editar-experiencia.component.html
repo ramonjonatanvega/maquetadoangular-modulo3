@@ -1,17 +1,18 @@
 <!-- Modal   PEN de EXPERIENCIA-->
 <div class="modal fade" id="experienciaModalpen" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">EXPERIENCIA</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-  
-        <form [formGroup]="experienForm" name="experienciaform">
-          <div class="modal-body">
-  
+  <div class="modal-dialog modal-dialog-centered justify-content-center">
+    <div class="modal-content text-white text-center rounded-4">
+      <div class="modal-header ">
+        <h3 class="modal-title " id="exampleModalLabel">Editar Experiencia</h3>
+        <button type="button" class="btn-close bg-white rounded-circle mb-4" data-bs-dismiss="modal"
+          aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <form [formGroup]="experienForm" name="experienciaform">
             <ul class="p-0">
-              <li *ngFor="let experiencia of experiencias" class="d-flex justify-content-between align-items-center m-1 ">
+              <li *ngFor="let experiencia of experiencias"
+                class="d-flex justify-content-between align-items-center m-1 ">
                 <span>{{experiencia.id}}. {{experiencia.nombreEmpresa|uppercase}}</span>
                 <span class="d-flex justify-content-between gap-2">
                   <!--lapicito rojo que se cambia al tocarlo-->
@@ -32,63 +33,66 @@
               <div class="input-group-prepend border-0">
                 <span class="input-group-text border-0" id="basic-addon1">ID:</span>
               </div>
-              <input class="form-control outline-none border-0 bg-transparent" type="text" readonly formControlName="id">
+              <input class="form-control outline-none border-0 bg-transparent" type="text" readonly
+                formControlName="id">
             </div>
-  
-  
+
             <div class="mb-3">
               <label for="nombreEmpresa" class="form-label">Nombre</label>
-              <input type="text" class="form-control" id="nombreEmpresa" placeholder="campo obligatorio" formControlName="nombreEmpresa">
+              <input type="text" class="form-control text-center" id="nombreEmpresa" placeholder="campo obligatorio"
+                formControlName="nombreEmpresa">
             </div>
-  
+
             <div class="mb-3">
               <label for="puesto" class="form-label">Puesto</label>
-              <input type="text" class="form-control" id="puesto" formControlName="puesto" placeholder="campo obligatorio">            
+              <input type="text" class="form-control text-center" id="puesto" formControlName="puesto"
+                placeholder="campo obligatorio">
             </div>
-  
+
             <div class="mb-3">
               <label for="fechaInicio" class="form-label">Fecha Inicio</label>
-              <input type="fecha" class="form-control" id="fechaInicio" placeholder="fechaInicio...." formControlName="fechaInicio">
+              <input type="fecha" class="form-control text-center" id="fechaInicio" placeholder="fechaInicio...."
+                formControlName="fechaInicio">
             </div>
-  
+
             <div class="mb-3">
               <label for="fechaFin" class="form-label">Fecha Fin</label>
-              <input type="fecha" class="form-control" id="fechaFin" placeholder="fechaFin...." formControlName="fechaFin" >
+              <input type="fecha" class="form-control text-center" id="fechaFin" placeholder="fechaFin...."
+                formControlName="fechaFin">
             </div>
-  
-  
+
+
             <div class="mb-3">
               <label for="logoEmpresa" class="form-label">Logo Empresa</label>
-              <input type="text" class="form-control" id="logoEmpresa" formControlName="logoEmpresa" placeholder="campo obligatorio">             
+              <input type="url" class="form-control text-center" id="logoEmpresa" formControlName="logoEmpresa"
+                (change)="uploadImage($event)">
+
             </div>
-  
-  
-  
-  
+
+            <div class="imagen">
+              <img [src]="imagenesService.url" width="200px">
+
+            </div>
+
             <div class="mb-3">
-                <label for="descripcion" class="form-label">Descripcion del Puesto</label>
-                <input type="text" class="form-control" id="descripcion" formControlName="descripcion" placeholder="campo obligatorio">               
-              </div>
-  
-          
-  
+              <label for="descripcion" class="form-label">Descripcion del Puesto</label>
+              <textarea rows="5" type="text" class="form-control text-center" id="descripcion"
+                formControlName="descripcion" placeholder="campo obligatorio"> </textarea>
+            </div>
+
             <div class="form-check form-switch">
               <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"
                 formControlName="esTrabajoActual">
               <label class="form-check-label" for="flexSwitchCheckDefault">Es Trabajo Actual?</label>
             </div>
-  
-  
+
+
+
             <div class="modal-footer">
               <button class="btn btn-secondary" (click)="experienForm.reset()">RESET</button>
-              <button class="btn btn-secondary" (click)="guardar()" >GUARDAR DATOS</button>
+              <button class="btn btn-secondary" (click)="guardar()">GUARDAR DATOS</button>
             </div>
-          </div>
-        </form>
+
+          </form>
+        </div>
       </div>
-    </div>
-
-
-
-
-    

@@ -9,56 +9,51 @@ import { HabilidadService } from 'src/app/servicios/habilidad.service';
   styleUrls: ['./modal-habilidad.component.css']
 })
 export class ModalHabilidadComponent implements OnInit {
-   //creamos la propiedad
+  //Se inicializa el formulario.
   habiliForm: FormGroup;
-  nombreHabilidad: string ='';
-  porcentaje : string= '';
-  personaId : number = 1;
+  id?: number;
+  nombreHabilidad: string = '';
+  porcentaje: string = '';
+  personaId: number = 1;
 
-  constructor(private formBuilder: FormBuilder, private serviHabilidad: HabilidadService) { 
+  //Se inyectan los servicios que se van a utilizar.
+  constructor(private formBuilder: FormBuilder, private serviHabilidad: HabilidadService) {
 
-      //creamos el grupo de controles para el formulario
-      this.habiliForm = this.formBuilder.group({
-        nombreHabilidad:['',[Validators.required]],      
-        porcentaje:['', [Validators.required, Validators.min(0), Validators.max(100)]],
-        })
-    
-    }
+    //Se crea el formulario, con sus propiedades y validaciones.
+    this.habiliForm = this.formBuilder.group({
+      nombreHabilidad: ['', [Validators.required]],
+      porcentaje: ['', [Validators.required, Validators.min(0), Validators.max(100)]],
+      personaid: [1],
+    })
 
-  ngOnInit(): void {}
+  }
+
+  ngOnInit(): void { }
 
   //declarar para los campos
-  get NombreHabilidad(){
+  get NombreHabilidad() {
     return this.habiliForm.get("nombreHabilidad");
   }
 
-  get Porcentaje(){
+  get Porcentaje() {
     return this.habiliForm.get("porcentaje");
   }
 
- 
 
-  onCrear(): void {
-    const habilidad = new Habilidad(this.nombreHabilidad, this.porcentaje, 
-     this.personaId);
-   this.serviHabilidad.crear(habilidad).subscribe(data =>{alert("Experiencia añadida");
-  window.location.reload();
-});
-}
-limpiar() : void{
-  this.habiliForm.reset();
-  alert("se limpio correctamente");
-}
 
-onEnviar(event: Event){
-  event.preventDefault();
-  if(this.habiliForm.valid){
-    this.onCrear();
-    alert("se creo correctamente");
-  }else{
-    alert("falló en la carga, intente nuevamente");
-    this.habiliForm.markAllAsTouched();
-  }    
-}
+  /*Esta función sirve para mandar los valores del formulario, a la base de datos. Pasando a través del servicio de educación y posteriormente, del back-end.*/
+  crearHabilidad(): void {
+    this.serviHabilidad.crear(this.habiliForm.value).subscribe(data => {
+      alert("Nueva habilidad dura agregada");
+      window.location.reload();
+    }, err => {
+      alert("Se ha producido un error, intente nuevamente");
+    });
+  }
+
+  //esto es para limpiar los campos del formulario
+  limpiar(): void {
+    this.habiliForm.reset();
+  }
 
 }

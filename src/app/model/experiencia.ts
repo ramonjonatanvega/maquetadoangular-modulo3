@@ -1,4 +1,6 @@
 export class Experiencia {
+ 
+  
     id?:number;
     nombreEmpresa : string;
     logoEmpresa : string;           

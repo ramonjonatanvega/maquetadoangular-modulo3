@@ -10,7 +10,28 @@ export class EducacionService {
 
   url= 'http://localhost:8080/educacion/'
   constructor(private httpClient:HttpClient) { }
-    //ver lista educacion
+
+
+   /* Propiedad de tipo experiencia. Lo utilizo para que los inputs, del modal editar, contengan los valores de la
+  card seleccionada.
+  */
+  educaciForm : Educacion = {
+    id: null,
+    nombreInstitucion: '',
+    logoInstitucion: '',
+    titulo: '',
+    fechaInicio: '',
+    fechaFin: '',
+    esEstudioActual: false,
+    personaId: 0,
+   
+  }
+
+
+
+    /* A partir de acá, comienzan los métodos responsables de comunicarse con el backend y así, lograr traer
+  crear, actualizar o eliminar experiencias.
+  */
     public lista(): Observable<Educacion[]>{
       return this.httpClient.get<Educacion[]>(this.url + `lista`);
     }
@@ -32,6 +53,7 @@ export class EducacionService {
     public edit(educacion: Educacion):Observable<any>{
       return this.httpClient.put<any>(this.url + 'update', educacion);
       }
+      
 
   //eliminar educacion
     public delete(id: number):Observable<any>{

@@ -8,13 +8,16 @@ import { Habilidad } from '../model/habilidad';
 })
 export class HabilidadService {
 
- // edit(value: any) {
-  //  throw new Error('Method not implemented.');}
+ 
 
     url= 'http://localhost:8080/skill/'
   constructor(private httpClient:HttpClient) { }
 
- //traela lista de experiencia del backend
+
+
+  /* A partir de acá, comienzan los métodos responsables de comunicarse con el backend y así, lograr traer
+  crear, actualizar o eliminar experiencias.
+  */
  public lista(): Observable<Habilidad[]>{
   return this.httpClient.get<Habilidad[]>(this.url + `lista`);
 }

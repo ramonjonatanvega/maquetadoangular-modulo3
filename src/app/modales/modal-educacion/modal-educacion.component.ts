@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Educacion } from 'src/app/model/educacion';
 import { EducacionService } from 'src/app/servicios/educacion.service';
+import { ImageService } from 'src/app/servicios/image.service';
 
 @Component({
   selector: 'app-modal-educacion',
@@ -9,8 +10,9 @@ import { EducacionService } from 'src/app/servicios/educacion.service';
   styleUrls: ['./modal-educacion.component.css']
 })
 export class ModalEducacionComponent implements OnInit {
- //creamos la propiedad
+  //Se inicializa el formulario.
   educaForm: FormGroup;
+  id?:number;
   nombreInstitucion: string ='';
   logoInstitucion : string ='';
   titulo : string = '';
@@ -19,10 +21,10 @@ export class ModalEducacionComponent implements OnInit {
   esEstudioActual : boolean = false;
   personaId : number = 1;
 
-  //importamos el FormBuilder
-  constructor(private formBuilder : FormBuilder, private serviEducacion:EducacionService) { 
+  //Se inyectan los servicios que se van a utilizar.
+  constructor(private formBuilder : FormBuilder, private serviEducacion:EducacionService, public imagenesService: ImageService) { 
    
-     //Creamos el grupo de controles para el formulario 
+     //Se crea el formulario, con sus propiedades y validaciones.
      this.educaForm=this.formBuilder.group({
       nombreInstitucion:['',[Validators.required]],
       logoInstitucion:['',[Validators.required]],     
@@ -30,55 +32,67 @@ export class ModalEducacionComponent implements OnInit {
       fechaInicio :['',[Validators.required]],
       fechaFin :['',[Validators.required]],
       esEstudioActual :[''],
+      personaid: [1],
    })
 
   }
 
-  ngOnInit(): void {}
-  
-  get NombreInstitucion(){
+  ngOnInit(): void {
+  }
+
+
+  get NombreInstitucion() {
     return this.educaForm.get("nombreInstitucion");
   }
 
-  get LogoInstitucion(){
+  get LogoInstitucion() {
     return this.educaForm.get("logoInstitucion");
   }
 
-  get Titulo(){
+  get Titulo() {
     return this.educaForm.get("titulo");
   }
 
-  get FechaInicio(){
+  get FechaInicio() {
     return this.educaForm.get("fechaInicio");
   }
 
-  get FechaFin(){
+  get FechaFin() {
     return this.educaForm.get("fechaFin");
   }
 
+  get EsEstudioActual() {
+    return this.educaForm.get("esEstudioActual");
+  }
 
- 
-  onCrear(): void {
-    const educacion = new Educacion(this.nombreInstitucion, this.logoInstitucion,  this.titulo, this.fechaInicio, this.fechaFin, 
-     this.esEstudioActual, this.personaId);
-   this.serviEducacion.crear(educacion).subscribe(data =>{alert("Experiencia añadida");
-  window.location.reload();
-});
-}
-limpiar() : void{
-  this.educaForm.reset();
-  alert("se limpio correctamente");
-}
 
-onEnviar(event: Event){
-  event.preventDefault();
-  if(this.educaForm.valid){
-    this.onCrear();
-    alert("se creo correctamente");
-  }else{
-    alert("falló en la carga, intente nuevamente");
-    this.educaForm.markAllAsTouched();
-  }    
-}
+  /*Esta función sirve para mandar los valores del formulario, a la base de datos. Pasando a través del servicio de educación y posteriormente, del back-end. */
+  crearNuevoCurso():void {
+    /*Acá se obtiene la propiedad y valor de imgCurso y se introduce la url obtenida de la imagen, proveniente de Firebase y se la manda a la base de datos, junto con los demás valores del formulario.*/
+    this.educaForm.value.logoInstitucion = this.imagenesService.url;
+    this.serviEducacion.crear(this.educaForm.value).subscribe(data => {
+      alert("Nuevo Curso agregado");
+      this.clearForm();
+      window.location.reload();
+    }, err => {
+      alert("Se ha producido un error, intente nuevamente");
+    });
+  }
+
+  //esto es para limpiar los campos del formulario
+  limpiar(): void{
+    this.educaForm.reset();
+  }
+
+  clearForm() {
+    this.imagenesService.url = "";
+    this.educaForm.reset({});
+  }
+
+  //Esta función obtiene la imagen del input de tipo File, para, posteriormente, mandarla a Firebase.
+  uploadImage($event: any) {
+    const name = 'Educacion';
+    this.imagenesService.uploadImage($event, name);
+  }
 
 }

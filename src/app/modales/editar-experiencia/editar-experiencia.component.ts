@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Experiencia } from 'src/app/model/experiencia';
 
 import { ExperienciaService } from 'src/app/servicios/experiencia.service';
+import { ImageService } from 'src/app/servicios/image.service';
 
 
 @Component({
@@ -13,42 +14,38 @@ import { ExperienciaService } from 'src/app/servicios/experiencia.service';
   styleUrls: ['./editar-experiencia.component.css']
 })
 export class EditarExperienciaComponent implements OnInit {
-  experienForm:FormGroup;
-    
- 
-  experiencias:Experiencia[] = [];
-  
-  constructor(private serviExperiencia: ExperienciaService,
-              private formBuilder: FormBuilder,
-              
-               )
-               { 
-               
+  experienForm: FormGroup;
 
-     //Creamos el grupo de controles para el formulario 
-     this.experienForm = this.formBuilder.group({
-      id:[''],
-      nombreEmpresa:[''],
-      logoEmpresa:[''],     
-      puesto:[''],
-      descripcion:[''],
-      fechaInicio :[''],
-      fechaFin :[''],
-      esTrabajoActual :[''],
-      personaId:[],
-      })
+
+  experiencias: Experiencia[] = [];
+
+  constructor(public serviExperiencia: ExperienciaService,
+    private formBuilder: FormBuilder,
+    public imagenesService: ImageService
+  ) {
+
+
+    //Creamos el grupo de controles para el formulario 
+    this.experienForm = this.formBuilder.group({
+      id: [''],
+      nombreEmpresa: [''],
+      logoEmpresa: ['', [Validators.required,]],
+      puesto: [''],
+      descripcion: [''],
+      fechaInicio: [''],
+      fechaFin: [''],
+      esTrabajoActual: [''],
+      personaId: [],
+    })
 
   }
 
- 
-
-  //trae lista para editar
   ngOnInit(): void {
     this.cargarExperiencia();
   }
-  
-  
 
+
+  //lista experiencia
   cargarExperiencia(): void {
     this.serviExperiencia.lista().subscribe(
       data => {
@@ -57,6 +54,7 @@ export class EditarExperienciaComponent implements OnInit {
     )
   }
 
+  //traer por id
   cargarDetalle(id: number) {
     this.serviExperiencia.detail(id).subscribe(
       {
@@ -71,44 +69,42 @@ export class EditarExperienciaComponent implements OnInit {
       }
     )
   }
-  //👇 esto es solo para hacer pruebas en local
 
 
-  guardar() {
-    console.log("FUNCIONA!!!")
-    let experiencia = this.experienForm.value;
-    console.log()
-
-    if (experiencia.id == '') {
-      this.serviExperiencia.createExp(experiencia).subscribe(
-        data => {
-          alert("Su nueva Experiencia fue añadida correctamente");
-          this.cargarExperiencia();
-          this.experienForm.reset();
-        }
-      )
-    } else {
-      this.serviExperiencia.edit(experiencia).subscribe(
-        data => {
-          alert("Experiencia editada!");
-          this.cargarExperiencia();
-          this.experienForm.reset();
-        }
-      )
-    }
+  /*
+      Acá se obtiene la propiedad de imgExperiencia y valor del modal ubicado en el servicio de experiencia y se introduce la url obtenida de la imagen, 
+      proveniente de Firebase y se la manda a la base de datos, junto con los demás valores del formulario.
+      👇 */
+  guardar(): void {
+    this.serviExperiencia.edit(this.experienForm.value).subscribe(data => {
+      alert("Nuevo Curso editado");
+      window.location.reload();
+    }, err => {
+      alert("Se ha producido un error, intente nuevamente");
+    });
   }
- 
 
+
+
+  //borrar la experiencia
   borrar(id: number) {
     this.serviExperiencia.deleteExp(id).subscribe(
       db => {
-          alert("se pudo eliminar satisfactoriamente")
-          this.cargarExperiencia();
-          
-        },
-        error => {
+        alert("se pudo eliminar satisfactoriamente")
+        this.cargarExperiencia();
+
+      },
+      error => {
         alert("No se pudo eliminar")
-        })
-      }
-    
+      })
   }
+
+  //Esta función obtiene la imagen del input de tipo File, para, posteriormente, mandarla a Firebase.
+  uploadImage($event: any) {
+    const name = 'Experiencia'
+    this.imagenesService.uploadImage($event, name);
+  }
+
+
+
+}

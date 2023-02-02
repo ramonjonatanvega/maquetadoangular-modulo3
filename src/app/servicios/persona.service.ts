@@ -23,7 +23,7 @@ export class PersonaService {
   }
 
   public crear(perso: Persona):Observable<any>{
-    return this.httpClient.post<any>(this.URL + 'crear', perso);
+    return this.httpClient.post<any>(this.URL + `crear`, perso);
     }
 
   public delete(id: number):Observable<any>{

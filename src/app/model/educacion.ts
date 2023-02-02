@@ -1,12 +1,12 @@
 export class Educacion {
     id? : number;
-    nombreInstitucion : string;
-    logoInstitucion : string;           
-    titulo : string;
-    fechaInicio : string; 
-    fechaFin : string;
-    esEstudioActual : boolean;
-    personaId : number;
+    nombreInstitucion:string;
+    logoInstitucion:string;           
+    titulo:string;
+    fechaInicio:string; 
+    fechaFin:string;
+    esEstudioActual:boolean;
+    personaId:number;
 
    constructor(nombreInstitucion:string, logoInstitucion:string, titulo:string, fechaInicio:string, fechaFin:string, esEstudioActual:boolean, personaId:number){
     this.nombreInstitucion = nombreInstitucion;

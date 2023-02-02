@@ -1,0 +1,84 @@
+#habilidadModalpen{
+    background-color: rgba(78, 18, 38, 0.164);
+    backdrop-filter: blur(12px) saturate(90%) brightness(120%);
+    --bs-modal-width: 600px;
+    --bs-modal-padding: 1rem;
+}
+
+.modal-header{
+    border:none;
+} 
+
+.btn-close{
+    font-size: 15px;
+}
+
+.btn-close:focus{
+    border-style:none;
+    box-shadow: none;
+}
+
+.modal-content{
+    background: rgba(137, 205, 183, 0.418);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 30px rgba(105, 102, 102, 0);
+}
+
+.modal-title{
+    font-size: 28px;
+}
+
+.modal-body{
+    font-size: 20px;
+}
+
+.form-control{
+    font-size: 18px;
+}
+
+.modal-footer{
+    border:none;
+}
+
+.btn{
+    background: rgba(137, 205, 183, 0.418);
+    color: rgb(25, 74, 189);
+    border-radius: 40px;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    width: 50%;
+}
+
+.btn:hover{
+    background: rgb(25, 74, 189);
+    color: white;
+    transform: scale(1.05);
+    transition: 0.5s;
+}
+
+@media(max-width: 768px){
+    .modal-content{
+        margin: 35px;
+    }
+
+    .modal-title{
+        font-size: 25px;
+    }
+
+    /*aca va lo del boton close*/
+    .btn-close{
+        font-size: 10px;
+        margin-top: -10px;
+    }
+    
+    .form-control{
+        font-size: 18px;
+    }
+
+    .btn{
+        font-size: 15px;
+        width: 40%;
+    }
+}
