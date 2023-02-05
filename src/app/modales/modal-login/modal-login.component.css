@@ -1,7 +1,7 @@
 #exampleModal{
     background-color: rgba(78, 18, 38, 0.164);
     backdrop-filter: blur(0.75rem)  ;
-    --bs-modal-width: 37.5;
+    --bs-modal-width: 37.5rem;
     --bs-modal-padding: 1rem;
 }
 
