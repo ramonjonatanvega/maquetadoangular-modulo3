@@ -26,6 +26,7 @@ export class ModalEducacionComponent implements OnInit {
    
      //Se crea el formulario, con sus propiedades y validaciones.
      this.educaForm=this.formBuilder.group({
+      id:[''],
       nombreInstitucion:['',[Validators.required]],
       logoInstitucion:['',[Validators.required]],     
       titulo:['',[Validators.required]],

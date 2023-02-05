@@ -53,9 +53,8 @@ get Contrasenia(){
             console.log("DATA: " + JSON.stringify(data));
            
             // alert("hola" + data.id);
-            if (data) {
-              
-             
+            if (data) {  
+              alert("Estas logueado");        
               this.ruta.navigate(['/dashboard']);
             } else {alert(" ACCESO INCORRECTO");
             alert("error al iniciar sesion");

@@ -1,7 +1,7 @@
 #modal-agregar-habilidad{
     background-color: rgba(78, 18, 38, 0.164);
-    backdrop-filter: blur(12px) saturate(90%) brightness(120%);
-    --bs-modal-width: 500px;
+    backdrop-filter: blur(0.75rem)  ;
+    --bs-modal-width: 37.5rem;
     --bs-modal-padding: 1rem;
 }
 
@@ -10,7 +10,7 @@
 } 
 
 .btn-close{
-    font-size: 15px;
+    font-size: 0.938rem;
 }
 
 .btn-close:focus{
@@ -20,25 +20,20 @@
 
 .modal-content{
     background: rgba(137, 205, 183, 0.418);
-    backdrop-filter: blur(15px);
-    box-shadow: 0 0 30px rgba(105, 102, 102, 0);
+    backdrop-filter: blur(0.938rem);
+    box-shadow: 0 0 1.875rem rgba(105, 102, 102, 0);
 }
 
 .modal-title{
-    font-size: 28px;
+    font-size: 1.75rem;
 }
 
 .modal-body{
-    font-size: 20px;
-}
-
-#input-porcentaje{
-    width: 40%;
-    margin-left: 30%;
+    font-size: 1.25rem;
 }
 
 .form-control{
-    font-size: 18px;
+    font-size: 1.125rem;
 }
 
 .modal-footer{
@@ -48,12 +43,12 @@
 .btn{
     background: rgba(137, 205, 183, 0.418);
     color: rgb(25, 74, 189);
-    border-radius: 10px;
+    border-radius: 0.625rem;
     border: none;
-    padding: 10px;
-    font-size: 20px;
+    padding: 0.625rem;
+    font-size: 1.25rem;
     font-weight: bold;
-    width: 40%;
+    width: 30%;
 }
 
 .btn:hover{
@@ -63,28 +58,27 @@
     transition: 0.5s;
 }
 
-
-@media(max-width: 768px){
+@media(max-width: 48rem){
     .modal-content{
-        margin: 35px;
+        margin: 2.188rem;
     }
 
     .modal-title{
-        font-size: 25px;
+        font-size: 1.563rem;
     }
 
     /*aca va lo del boton close*/
     .btn-close{
-        font-size: 10px;
-        margin-top: -10px;
+        font-size: 0.625rem;
+        margin-top: -0.625rem;
     }
     
     .form-control{
-        font-size: 18px;
+        font-size: 1.125rem;
     }
 
     .btn{
-        font-size: 15px;
+        font-size: 0.938rem;
         width: 40%;
     }
 }

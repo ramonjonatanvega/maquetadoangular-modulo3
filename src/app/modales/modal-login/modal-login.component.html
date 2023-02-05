@@ -1,5 +1,5 @@
 <!------------- MODAL------------->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false">
   <div class="modal-dialog modal-dialog-centered justify-content-center">
     <div class="modal-content rounded-4 p-1">
       <div class="modal-header">
@@ -38,7 +38,7 @@
 
           <div class="modal-footer mt-4 justify-content-center">
             <button type="submit" [disabled]="Correo?.hasError('required') || Contrasenia?.hasError('required')"
-              class="btn text-center" data-bs-dismiss="modal">Ingresar</button>
+              class="btn text-center" data-bs-dismiss="modal" >Ingresar</button>
           </div>
         </form>
       </div>

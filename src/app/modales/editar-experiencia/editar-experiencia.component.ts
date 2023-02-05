@@ -29,7 +29,7 @@ export class EditarExperienciaComponent implements OnInit {
     this.experienForm = this.formBuilder.group({
       id: [''],
       nombreEmpresa: [''],
-      logoEmpresa: ['', [Validators.required,]],
+      logoEmpresa: [''],
       puesto: [''],
       descripcion: [''],
       fechaInicio: [''],
@@ -72,7 +72,7 @@ export class EditarExperienciaComponent implements OnInit {
 
 
   /*
-      Acá se obtiene la propiedad de imgExperiencia y valor del modal ubicado en el servicio de experiencia y se introduce la url obtenida de la imagen, 
+      Acá se obtiene la propiedad de logoEmpresa y valor del modal ubicado en el servicio de experiencia y se introduce la url obtenida de la imagen, 
       proveniente de Firebase y se la manda a la base de datos, junto con los demás valores del formulario.
       👇 */
   guardar(): void {

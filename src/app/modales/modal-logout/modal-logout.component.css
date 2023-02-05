@@ -1,7 +1,7 @@
 #exampleModal{
     background-color: rgba(78, 18, 38, 0.164);
-    backdrop-filter: blur(12px) saturate(90%) brightness(120%);
-    --bs-modal-width: 600px;
+    backdrop-filter: blur(0.75rem)  ;
+    --bs-modal-width: 37.5rem;
     --bs-modal-padding: 1rem;
 }
 
@@ -10,8 +10,8 @@
 } 
 
 .btn-close{
-    font-size: 20px;
-    margin-top: -30px;
+    font-size: 1.25rem;
+    margin-top: -1.875;
 }
 
 .btn-close:focus{
@@ -22,16 +22,16 @@
 
 .modal-content{
     background: rgba(219, 171, 201, 0.418);
-    backdrop-filter: blur(15px);
-    box-shadow: 0 0 30px rgba(105, 102, 102, 0);
+    backdrop-filter: blur(0.938rem);
+    box-shadow: 0 0 1.875rem rgba(105, 102, 102, 0);
 }
 
 .modal-title{
-    font-size: 30px;
+    font-size: 1.875rem;
 }
 
 .form-control{
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 
 .modal-footer{
@@ -41,10 +41,10 @@
 .btn{
     background: #692a64;
     color: white;
-    border-radius: 10px;
+    border-radius: 0.625rem;
     border: none;
-    padding: 10px;
-    font-size: 20px;
+    padding: 0.625rem;
+    font-size: 1.25rem;
     font-weight: bold;
     width: 40%;
 }
@@ -56,26 +56,26 @@
     transition: 0.5s;
 }
 
-@media(max-width: 768px){
+@media(max-width: 48rem){
     .modal-content{
-        margin: 35px;
+        margin: 2.188rem;
     }
 
     .modal-title{
-        font-size: 25px;
+        font-size: 1.563rem;
     }
 
     /*aca va lo del boton close*/
     .btn-close{
-        font-size: 12px;
+        font-size: 0.75rem;
     }
     
     .form-control{
-        font-size: 18px;
+        font-size: 1.125rem;
     }
 
     .btn{
-        font-size: 18px;
+        font-size: 1.125rem;
         width: 40%;
     }
     

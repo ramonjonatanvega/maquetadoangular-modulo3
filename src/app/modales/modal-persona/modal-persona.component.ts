@@ -32,6 +32,9 @@ export class ModalPersonaComponent implements OnInit {
       nombre: ['', [Validators.required]],
       apellido: ['', [Validators.required]],
       banner: ['', [Validators.required]],
+      banner1: ['', [Validators.required]],
+      banner2: ['', [Validators.required]],
+      banner3: ['', [Validators.required]],
       foto_perfil: ['', [Validators.required]],
       titulo: ['', [Validators.required]],
       ubicacion: ['', [Validators.required]],
@@ -56,6 +59,18 @@ export class ModalPersonaComponent implements OnInit {
 
   get Banner() {
     return this.persoForm.get("banner");
+  }
+
+  get Banner1() {
+    return this.persoForm.get("banner1");
+  }
+
+  get Banner2() {
+    return this.persoForm.get("banner2");
+  }
+
+  get Banner3() {
+    return this.persoForm.get("banner3");
   }
 
   get Foto_perfil() {
@@ -91,6 +106,9 @@ export class ModalPersonaComponent implements OnInit {
 
     /*Acá se obtiene la propiedad y valor de imgCurso y se introduce la url obtenida de la imagen, proveniente de Firebase y se la manda a la base de datos, junto con los demás valores del formulario.*/
     this.persoForm.value.banner = this.imagenesService.url;
+    this.persoForm.value.banner1 = this.imagenesService.url;
+    this.persoForm.value.banner2 = this.imagenesService.url;
+    this.persoForm.value.banner3 = this.imagenesService.url;
     this.persoForm.value.foto_perfil = this.imagenesService.url;
     this.serviPersona.crear(this.persoForm.value).subscribe(data => {
       alert("Nuevo Curso agregado");

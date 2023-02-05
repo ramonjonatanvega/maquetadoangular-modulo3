@@ -3,7 +3,7 @@
   <div class="modal-dialog modal-dialog-centered justify-content-center">
     <div class="modal-content text-white text-center rounded-4">
       <div class="modal-header ">
-        <h3 class="modal-title " id="exampleModalLabel">Editar Experiencia</h3>
+        <h3 class="modal-title " id="exampleModalLabelEditarExperiencia">Editar Experiencia</h3>
         <button type="button" class="btn-close bg-white rounded-circle mb-4" data-bs-dismiss="modal"
           aria-label="Close"></button>
       </div>
@@ -51,13 +51,13 @@
 
             <div class="mb-3">
               <label for="fechaInicio" class="form-label">Fecha Inicio</label>
-              <input type="fecha" class="form-control text-center" id="fechaInicio" placeholder="fechaInicio...."
+              <input type="fecha" class="form-control text-center" id="fechaInicioExpEdit" placeholder="fechaInicio...."
                 formControlName="fechaInicio">
             </div>
 
             <div class="mb-3">
               <label for="fechaFin" class="form-label">Fecha Fin</label>
-              <input type="fecha" class="form-control text-center" id="fechaFin" placeholder="fechaFin...."
+              <input type="fecha" class="form-control text-center" id="fechaFinExpEdit" placeholder="fechaFin...."
                 formControlName="fechaFin">
             </div>
 
@@ -76,12 +76,12 @@
 
             <div class="mb-3">
               <label for="descripcion" class="form-label">Descripcion del Puesto</label>
-              <textarea rows="5" type="text" class="form-control text-center" id="descripcion"
+              <textarea rows="5" type="text" class="form-control text-center" id="descripcionExperienciaEditar"
                 formControlName="descripcion" placeholder="campo obligatorio"> </textarea>
             </div>
 
             <div class="form-check form-switch">
-              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"
+              <input class="form-check-input" type="checkbox" role="switch" id="esTrabajoActualExpEditar"
                 formControlName="esTrabajoActual">
               <label class="form-check-label" for="flexSwitchCheckDefault">Es Trabajo Actual?</label>
             </div>
@@ -96,3 +96,6 @@
           </form>
         </div>
       </div>
+    </div>
+  </div>
+</div>

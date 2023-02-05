@@ -1,10 +1,10 @@
 <!--dashboard experiencia-->
-<!--se agrega el form y se crea ngsubmit=onsubmit y formgroup=educaForm y despues educaForm se declara en el modal-experiencia.ts-->
-<div class="modal fade" id="modal-agregar-educacion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modal-agregar-educacion" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered justify-content-center">
         <div class="modal-content text-white text-center rounded-4">
             <div class="modal-header">
-                <h3 class="modal-title" id="exampleModalLabel">Agregar Educacion</h3>
+                <h3 class="modal-title" id="exampleModalLabelAgregarEducacion">Agregar Educacion</h3>
                 <button type="button" class="btn-close bg-white rounded-circle mb-4" data-bs-dismiss="modal"
                     aria-label="Close"></button>
             </div>
@@ -18,7 +18,7 @@
 
 
             <div class="modal-body">
-                <form [formGroup]="educaForm" (ngSubmit)="crearNuevoCurso()" >
+                <form [formGroup]="educaForm" (ngSubmit)="crearNuevoCurso()">
                     <div class="mb-3-sm ">
                         <label for="nombreInsti" class="form-label">Nombre Empresa</label>
                         <input type="text" class="form-control" id="nombreInsti" name="nombreInstitucion" required
@@ -51,8 +51,8 @@
 
                     <div class="imagen">
                         <img [src]="imagenesService.url" width="200px">
-          
-                      </div>
+
+                    </div>
 
                     <br>
 
@@ -106,13 +106,13 @@
 
                     <div class="form-check form-switch">
                         <input type="checkbox" role="switch" value="" class="form-check-input" name="esEstudioActual"
-                            formControlName="esEstudioActual" id="flexSwitchCheckDefault">
+                            formControlName="esEstudioActual" id="esEstudioActualEstuAgregar">
                         <label class="form-check-label" for="flexSwitchCheckDefault">Actualidad</label>
-                    </div>           
+                    </div>
 
                     <br>
 
-                    
+
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-ligth" (click)="limpiar()">Limpiar</button>
@@ -122,10 +122,10 @@
                     </div>
                 </form>
             </div>
-         </div>
+        </div>
 
 
-        
+
     </div>
 </div>
 <app-editar-educacion></app-editar-educacion>

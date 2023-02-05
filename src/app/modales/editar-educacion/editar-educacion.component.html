@@ -3,13 +3,13 @@
   <div class="modal-dialog modal-dialog-centered justify-content-center">
     <div class="modal-content text-white text-center rounded-4">
       <div class="modal-header ">
-        <h3 class="modal-title " id="exampleModalLabel">Editar Educacion</h3>
+        <h3 class="modal-title " id="exampleModalLabelEditarEducacion">Editar Educacion</h3>
         <button type="button" class="btn-close bg-white rounded-circle mb-4" data-bs-dismiss="modal"
           aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <div class="container">
-          <form  [formGroup]="educaForm" name="educacionform">
+          <form [formGroup]="educaForm" name="educacionform">
             <div class="modal-body">
 
               <ul class="p-0">
@@ -48,8 +48,8 @@
 
               <div class="mb-3">
                 <label for="logoInstitucion" class="form-label">Logo Institucion</label>
-                <input type="url" class="form-control text-center" id="logoInstitucion"  formControlName="logoInstitucion"
-                   (change)="uploadImage($event)"  placeholder="Upload file...">
+                <input type="url" class="form-control text-center" id="logoInstitucion"
+                  formControlName="logoInstitucion" (change)="uploadImage($event)" placeholder="Upload file...">
               </div>
 
 
@@ -93,3 +93,6 @@
           </form>
         </div>
       </div>
+    </div>
+  </div>
+</div>
