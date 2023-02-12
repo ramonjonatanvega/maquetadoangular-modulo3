@@ -17,7 +17,7 @@ export class ModalLogoutComponent implements OnInit {
   onLogOut(): void{
     this.autenticacionService.logOut()
     this.ruta.navigate(['/index'])
-    
+    window.location.reload();
   }
  
   

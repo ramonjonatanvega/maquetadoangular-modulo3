@@ -33,14 +33,16 @@ export class EditarPersonaComponent implements OnInit {
       titulo: [''],
       ubicacion: [''],
       correo: [''],
-      contrasenia: [''],
+      contrasenia: ['',[Validators.required, Validators.minLength(8)]],
       acerca_de: [''],
 
     })
 
   }
 
-
+  get Contrasenia(){
+    return this.persoForm.get('contrasenia');
+    }
 
 
   ngOnInit(): void {

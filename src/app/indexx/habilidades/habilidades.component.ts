@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Habilidad } from 'src/app/model/habilidad';
 import { HabilidadService } from 'src/app/servicios/habilidad.service';
+import { OwlOptions } from 'ngx-owl-carousel-o';
+
  
 
 @Component({
@@ -33,4 +35,5 @@ export class HabilidadesComponent implements OnInit {
         })
     }}*/
 
+    
 }

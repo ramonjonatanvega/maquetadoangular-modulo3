@@ -26,19 +26,22 @@
             <div>
               <label for="userPassword"></label>
               <input class="form-control text-center mb-2" type="password" id="inputPassword"
-                placeholder="Ingrese su clave" id="userPassword" name="userPassword" formControlName="contrasenia">
+                placeholder="Ingrese su clave" id="userPassword" name="userPassword" formControlName="contrasenia" autocomplete="on">
+              <p *ngIf="Contrasenia?.hasError('minlength')" class="text-danger">
+                Debe ingresar minimo 8 caracteres
+              </p>
             </div>
-
             <div *ngIf="Contrasenia?.errors && Contrasenia?.touched">
-              <div *ngIf="Contrasenia?.hasError('required')" class="alert alert-danger" role="alert">
+              <p *ngIf="Contrasenia?.hasError('required')" class="alert alert-danger" role="alert">
                 Debe ingresar la contraseña
-              </div>
+              </p>
             </div>
+          
           </div>
 
           <div class="modal-footer mt-4 justify-content-center">
             <button type="submit" [disabled]="Correo?.hasError('required') || Contrasenia?.hasError('required')"
-              class="btn text-center" data-bs-dismiss="modal" >Ingresar</button>
+              class="btn text-center" data-bs-dismiss="modal">Ingresar</button>
           </div>
         </form>
       </div>

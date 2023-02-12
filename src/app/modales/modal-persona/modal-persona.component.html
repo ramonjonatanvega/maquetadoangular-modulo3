@@ -20,8 +20,8 @@
                     <div class="mb-3-sm">
                         <label for="formFileSm" class="form-label">Nombre</label>
                         <!--formControlName pide nombre requerido y placeholder pide ingrese puesto-->
-                        <input class="form-control form-control-sm" id="nombrePersAgregar" type="text" formControlName="nombre"
-                            placeholder="Ingrese Nombre......"
+                        <input class="form-control form-control-sm" id="nombrePersAgregar" type="text"
+                            formControlName="nombre" placeholder="Ingrese Nombre......"
                             [ngClass]="{'is-invalid': Nombre.errors && Nombre.touched, 'is-valid': !Nombre.errors && Nombre.touched}"
                             readonly>
                         <!--formulario reactivo-->
@@ -52,9 +52,10 @@
                     <br>
 
                     <div class="mb-3">
-                        <label for="formFileSm" class="form-label">Imagen Banner</label>
+                        <label for="formFileSm" class="form-label">Imagen Banner 1</label>
                         <!--formControlName pide banner requerida-->
-                        <input class="form-control form-control-sm" id="banner1PersAgregar" type="file" formControlName="banner"
+                        <input class="form-control form-control-sm" id="banner1PersAgregar" type="file"
+                            formControlName="banner"
                             [ngClass]="{'is-invalid': Banner.errors && Banner.touched, 'is-valid': !Banner.errors && Banner.touched}"
                             (change)="uploadImage($event)" readonly>
                         <!--formulario reactivo-->
@@ -68,9 +69,10 @@
                     <br>
 
                     <div class="mb-3">
-                        <label for="formFileSm" class="form-label">Imagen Banner</label>
+                        <label for="formFileSm" class="form-label">Imagen Banner 2</label>
                         <!--formControlName pide banner requerida-->
-                        <input class="form-control form-control-sm" id="banner2PersAgregar" type="file" formControlName="banner1"
+                        <input class="form-control form-control-sm" id="banner2PersAgregar" type="file"
+                            formControlName="banner1"
                             [ngClass]="{'is-invalid': Banner1.errors && Banner1.touched, 'is-valid': !Banner1.errors && Banner1.touched}"
                             (change)="uploadImage($event)" readonly>
                         <!--formulario reactivo-->
@@ -84,9 +86,10 @@
                     <br>
 
                     <div class="mb-3">
-                        <label for="formFileSm" class="form-label">Imagen Banner</label>
+                        <label for="formFileSm" class="form-label">Imagen Banner 3</label>
                         <!--formControlName pide banner requerida-->
-                        <input class="form-control form-control-sm" id="banner3PersAgregar" type="file" formControlName="banner2"
+                        <input class="form-control form-control-sm" id="banner3PersAgregar" type="file"
+                            formControlName="banner2"
                             [ngClass]="{'is-invalid': Banner2.errors && Banner2.touched, 'is-valid': !Banner2.errors && Banner2.touched}"
                             (change)="uploadImage($event)" readonly>
                         <!--formulario reactivo-->
@@ -100,9 +103,10 @@
                     <br>
 
                     <div class="mb-3">
-                        <label for="formFileSm" class="form-label">Imagen Banner</label>
+                        <label for="formFileSm" class="form-label">Imagen Banner 4</label>
                         <!--formControlName pide banner requerida-->
-                        <input class="form-control form-control-sm" id="banner4PersAgregar" type="file" formControlName="banner3"
+                        <input class="form-control form-control-sm" id="banner4PersAgregar" type="file"
+                            formControlName="banner3"
                             [ngClass]="{'is-invalid': Banner3.errors && Banner3.touched, 'is-valid': !Banner3.errors && Banner3.touched}"
                             (change)="uploadImage($event)" readonly>
                         <!--formulario reactivo-->
@@ -135,8 +139,8 @@
                     <div class="mb-3">
                         <label for="formFileSm" class="form-label">Titulo</label>
                         <!--formControlName pide titulo requerido y placeholder pide ingrese puesto-->
-                        <input class="form-control form-control-sm" id="tituloPersAgregar" type="text" formControlName="titulo"
-                            placeholder="Ingrese Titulo......"
+                        <input class="form-control form-control-sm" id="tituloPersAgregar" type="text"
+                            formControlName="titulo" placeholder="Ingrese Titulo......"
                             [ngClass]="{'is-invalid': Titulo.errors && Titulo.touched, 'is-valid': !Titulo.errors && Titulo.touched}"
                             readonly>
                         <!--formulario reactivo-->
@@ -169,8 +173,8 @@
                     <div class="mb-3">
                         <label for="formFileSm" class="form-label">Correo</label>
                         <!--formControlName pide Ubicacion requerido y placeholder pide ingrese puesto-->
-                        <input class="form-control form-control-sm" id="correoPersAgregar" type="text" formControlName="correo"
-                            placeholder="Ingrese Correo......"
+                        <input class="form-control form-control-sm" id="correoPersAgregar" type="text"
+                            formControlName="correo" placeholder="Ingrese Correo......"
                             [ngClass]="{'is-invalid': Correo.errors && Correo.touched, 'is-valid': !Correo.errors && Correo.touched}"
                             readonly>
                         <!--formulario reactivo-->
@@ -186,10 +190,13 @@
                     <div class="mb-3">
                         <label for="formFileSm" class="form-label">Contraseña</label>
                         <!--formControlName pide Ubicacion requerido y placeholder pide ingrese puesto-->
-                        <input class="form-control form-control-sm" id="formFileSm" type="text"
+                        <input class="form-control form-control-sm" id="formFileSm" type="password"
                             formControlName="contrasenia" placeholder="Ingrese Contraseña......"
                             [ngClass]="{'is-invalid': Contrasenia.errors && Contrasenia.touched, 'is-valid': !Contrasenia.errors && Contrasenia.touched}"
-                            readonly>
+                            autocomplete="on" readonly>
+                            <p *ngIf="Contrasenia?.hasError('minlength')" class="text-danger">
+                                Debe ingresar minimo 8 caracteres
+                            </p>
                         <!--formulario reactivo-->
                         <div *ngIf="Contrasenia.errors && Contrasenia.touched">
                             <p *ngIf="Contrasenia.hasError('required')" class="text-danger">

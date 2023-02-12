@@ -40,6 +40,8 @@ export class EditarExperienciaComponent implements OnInit {
 
   }
 
+
+  
   ngOnInit(): void {
     this.cargarExperiencia();
   }

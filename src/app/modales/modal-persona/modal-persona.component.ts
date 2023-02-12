@@ -39,7 +39,7 @@ export class ModalPersonaComponent implements OnInit {
       titulo: ['', [Validators.required]],
       ubicacion: ['', [Validators.required]],
       correo: ['', [Validators.required]],
-      contrasenia: ['', [Validators.required]],
+      contrasenia: ['',[Validators.required, Validators.minLength(8)]],
       acerca_de: ['', [Validators.required]],
 
 
@@ -48,6 +48,8 @@ export class ModalPersonaComponent implements OnInit {
   }
 
   ngOnInit(): void { }
+
+  
 
   get Nombre() {
     return this.persoForm.get("nombre");
@@ -135,5 +137,7 @@ export class ModalPersonaComponent implements OnInit {
     const name = 'Persona';
     this.imagenesService.uploadImage($event, name);
   }
-
+ 
+  
 }
+
