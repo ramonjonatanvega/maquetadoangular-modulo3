@@ -20,7 +20,7 @@
                 <form [formGroup]="proyecForm" (ngSubmit)="crearNuevoProyecto()" novalidate #form="ngForm">
                     <div class="mb-3-sm ">
                         <label for="nombr" class="form-label">Nombre Proyecto</label>
-                        <input type="text" class="form-control" id="nombr" name="nombre" required
+                        <input type="text" class="form-control text-center" id="nombr" name="nombre" required
                             formControlName="nombre" placeholder="Ingrese Nombre......"
                             [ngClass]="{'is-invalid': Nombre.errors && Nombre.touched, 'is-valid': !Nombre.errors && Nombre.touched}">
                         <!--formulario reactivo-->
@@ -36,7 +36,7 @@
                     <div class="mb-3">
                         <label for="image" class="form-label">Imagen</label>
                         <!--formControlName Pide imagen requerida-->
-                        <input type="file" class="form-control" id="image" name="imagen" formControlName="imagen"
+                        <input type="file" class="form-control text-center" id="image" name="imagen" formControlName="imagen"
                             [ngClass]="{'is-invalid': Imagen.errors && Imagen.touched, 'is-valid': !Imagen.errors && Imagen.touched}"
                             (change)="uploadImage($event)">
                         <!--formulario reactivo-->
@@ -57,7 +57,7 @@
                     <div class="mb-3">
                         <label for="fech">Fecha del Proyecto<small></small></label>
                         <div class="calendario">
-                            <input type="date" class="form-control" id="fech" name="fecha" formControlName="fecha"
+                            <input type="date" class="form-control text-center" id="fech" name="fecha" formControlName="fecha"
                                 [ngClass]="{'is-invalid': Fecha.errors && Fecha.touched, 'is-valid': !Fecha.errors && Fecha.touched}">
                             <!--formulario reactivo-->
                             <div *ngIf="Fecha.errors && Fecha.touched">
@@ -73,7 +73,7 @@
                     <div class="mb-3-sm ">
                         <label for="urll" class="form-label">Url</label>
                         <!--formControlName pide puesto requerida y placeholder pide ingrese puesto-->
-                        <input type="text" class="form-control" id="urll" name="url" required formControlName="url"
+                        <input type="text" class="form-control text-center" id="urll" name="url" required formControlName="url"
                             placeholder="Ingrese Url......"
                             [ngClass]="{'is-invalid': Url.errors && Url.touched, 'is-valid': !Url.errors && Url.touched}">
                         <!--formulario reactivo-->
@@ -89,7 +89,7 @@
                     <div class="mb-3">
                         <label for="descrip" class="form-label">Descripcion</label>
                         <!--formControlName pide descripcion requerida y placeholder pide ingrese Descripcion-->
-                        <textarea rows="5" type="text" class="form-control" id="descrip" name="descripcion"
+                        <textarea rows="5" type="text" class="form-control text-center" id="descrip" name="descripcion"
                             placeholder=" Descripcion del Proyecto......" formControlName="descripcion" required
                             [ngClass]="{'is-invalid': Descripcion.errors && Descripcion.touched, 'is-valid': !Descripcion.errors && Descripcion.touched}"></textarea>
                         <div *ngIf="Descripcion.errors && Descripcion.touched">

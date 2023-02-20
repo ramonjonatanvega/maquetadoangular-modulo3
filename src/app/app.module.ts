@@ -4,8 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CarouselModule } from 'ngx-owl-carousel-o';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 import { IndexComponent } from './index/index.component';
@@ -79,8 +78,6 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    CarouselModule,
-    BrowserAnimationsModule,
     ReactiveFormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideStorage(() => getStorage()),

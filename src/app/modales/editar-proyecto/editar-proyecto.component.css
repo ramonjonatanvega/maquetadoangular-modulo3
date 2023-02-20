@@ -1,5 +1,5 @@
 #proyectoModalpen{
-    background-color: rgba(78, 18, 38, 0.164);
+    background-color: #4e12262a;
     backdrop-filter: blur(0.75rem) saturate(90%) brightness(120%);
     --bs-modal-width: 37.5rem;
     --bs-modal-padding: 1rem;
@@ -19,9 +19,9 @@
 }
 
 .modal-content{
-    background: rgba(137, 205, 183, 0.418);
+    background: #89cdb76b;
     backdrop-filter: blur(0.938rem);
-    box-shadow: 0 0 1.875rem rgba(105, 102, 102, 0);
+    box-shadow: 0 0 1.875rem #69666600;
 }
 
 .modal-title{
@@ -41,8 +41,8 @@
 }
 
 .btn{
-    background: rgba(137, 205, 183, 0.418);
-    color: rgb(25, 74, 189);
+    background: #89cdb76b;
+    color: #194abd;
     border-radius: 2.5rem;
     border: none;
     padding: 0.625rem;
@@ -52,8 +52,8 @@
 }
 
 .btn:hover{
-    background: rgb(25, 74, 189);
-    color: white;
+    background: #194abd;
+    color: #ffffff;
     transform: scale(1.05);
     transition: 0.5s;
 }
